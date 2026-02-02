@@ -2,41 +2,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Family Youth Group</title>
+    <title>FBH Family Youth Group</title>
     <style>
+        /* General Styles */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f4f7f9;
             color: #333;
+            scroll-behavior: smooth;
         }
         header {
-            background: linear-gradient(135deg, #4facfe, #00f2fe);
-            color: white;
-            text-align: center;
-            padding: 80px 20px;
-            background-image: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1470&q=80');
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1470&q=80');
             background-size: cover;
             background-position: center;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
             position: relative;
         }
-        header::after {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background-color: rgba(0,0,0,0.5);
+        header h1 {
+            font-size: 3em;
+            margin: 0 0 10px 0;
+            animation: fadeInDown 1s ease forwards;
         }
-        header h1, header p {
-            position: relative;
-            z-index: 1;
+        header p {
+            font-size: 1.2em;
+            animation: fadeInUp 1s ease forwards;
         }
+
+        @keyframes fadeInDown {
+            0% {opacity:0; transform: translateY(-50px);}
+            100% {opacity:1; transform: translateY(0);}
+        }
+        @keyframes fadeInUp {
+            0% {opacity:0; transform: translateY(50px);}
+            100% {opacity:1; transform: translateY(0);}
+        }
+
         nav {
             background-color: #007acc;
             display: flex;
             justify-content: center;
             gap: 25px;
             flex-wrap: wrap;
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
         nav a {
             color: white;
@@ -44,21 +57,32 @@
             padding: 15px 20px;
             font-weight: bold;
             border-radius: 5px;
-            transition: background 0.3s;
+            transition: background 0.3s, transform 0.2s;
         }
         nav a:hover {
             background-color: #005fa3;
+            transform: scale(1.1);
         }
+
         section {
-            padding: 60px 20px;
+            padding: 80px 20px;
             max-width: 1000px;
             margin: auto;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s ease;
         }
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
         h2 {
             color: #007acc;
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 50px;
         }
+
         .activities {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -83,6 +107,7 @@
         .activity-card div {
             padding: 20px;
         }
+
         form input, form textarea {
             width: 100%;
             padding: 12px;
@@ -109,6 +134,7 @@
             background-color: #005fa3;
             transform: scale(1.05);
         }
+
         footer {
             background-color: #007acc;
             color: white;
@@ -116,6 +142,7 @@
             padding: 30px 20px;
             margin-top: 40px;
         }
+
         @media(max-width: 600px){
             nav {
                 flex-direction: column;
@@ -186,5 +213,21 @@
     <footer>
         <p>&copy; 2026 Family Youth Group. All rights reserved.</p>
     </footer>
+
+    <script>
+        // Scroll animation
+        const sections = document.querySelectorAll('section');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting){
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {threshold: 0.2});
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
 </body>
 </html>
