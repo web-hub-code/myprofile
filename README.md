@@ -2,9 +2,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FBH Family Youth Group</title>
+    <title>FBH Family Youth</title>
     <style>
-        /* General Styles */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
@@ -14,7 +13,7 @@
             scroll-behavior: smooth;
         }
         header {
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1470&q=80');
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1598399513680-f3f45de99216?auto=format&fit=crop&w=1470&q=80');
             background-size: cover;
             background-position: center;
             color: white;
@@ -152,8 +151,8 @@
 </head>
 <body>
     <header>
-        <h1>Family Youth Group</h1>
-        <p>Connecting youth and families for a brighter future</p>
+        <h1>FBH Family Youth</h1>
+        <p>Celebrating Gilgit culture and empowering youth</p>
     </header>
 
     <nav>
@@ -164,37 +163,41 @@
     </nav>
 
     <section id="home">
-        <h2>Welcome to Our Group</h2>
-        <p style="text-align:center; max-width:800px; margin:auto;">We are a community-focused youth group aiming to empower young people and build strong family bonds. Join us for events, workshops, and fun activities!</p>
+        <h2>Welcome to FBH Family Youth</h2>
+        <p style="text-align:center; max-width:800px; margin:auto;">
+            FBH Family Youth Group celebrates the rich culture of Gilgit and empowers young people through community events, workshops, and cultural programs. Join us to learn, share, and grow!
+        </p>
     </section>
 
     <section id="about">
         <h2>About Us</h2>
-        <p style="text-align:center; max-width:800px; margin:auto;">Family Youth Group started in 2024 with a mission to create a safe and inspiring space for youth. We believe in teamwork, learning, and community support.</p>
+        <p style="text-align:center; max-width:800px; margin:auto;">
+            Established in 2024, FBH Family Youth focuses on youth development while preserving Gilgit’s cultural heritage. We organize events, cultural workshops, and community programs to unite families and youth.
+        </p>
     </section>
 
     <section id="activities">
         <h2>Our Activities</h2>
         <div class="activities">
             <div class="activity-card">
-                <img src="https://images.unsplash.com/photo-1531497865140-1636d62e2034?auto=format&fit=crop&w=800&q=80" alt="Workshop">
+                <img src="https://images.unsplash.com/photo-1620799919687-d5678dbd9b7a?auto=format&fit=crop&w=800&q=80" alt="Cultural Dance">
                 <div>
-                    <h3>Workshops</h3>
-                    <p>Skill-building workshops for leadership, creativity, and personal growth.</p>
+                    <h3>Cultural Workshops</h3>
+                    <p>Learn traditional Gilgit crafts, music, and dance in fun workshops.</p>
                 </div>
             </div>
             <div class="activity-card">
-                <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=800&q=80" alt="Community Service">
+                <img src="https://images.unsplash.com/photo-1623967477261-b091edcb0345?auto=format&fit=crop&w=800&q=80" alt="Community Gathering">
                 <div>
-                    <h3>Community Service</h3>
-                    <p>Participate in local community projects and volunteer opportunities.</p>
+                    <h3>Community Events</h3>
+                    <p>Engage with local families and youth through festivals and gatherings.</p>
                 </div>
             </div>
             <div class="activity-card">
-                <img src="https://images.unsplash.com/photo-1554288245-9cda7f9e18b6?auto=format&fit=crop&w=800&q=80" alt="Sports & Events">
+                <img src="https://images.unsplash.com/photo-1560022641-507d4d1ed0d6?auto=format&fit=crop&w=800&q=80" alt="Youth Sports">
                 <div>
-                    <h3>Sports & Events</h3>
-                    <p>Fun sports, competitions, and social events to connect with peers.</p>
+                    <h3>Sports & Fun Activities</h3>
+                    <p>Connect with peers through games, competitions, and recreational activities.</p>
                 </div>
             </div>
         </div>
@@ -211,7 +214,7 @@
     </section>
 
     <footer>
-        <p>&copy; 2026 Family Youth Group. All rights reserved.</p>
+        <p>&copy; 2026 FBH Family Youth. All rights reserved.</p>
     </footer>
 
     <script>
@@ -224,10 +227,7 @@
                 }
             });
         }, {threshold: 0.2});
-
-        sections.forEach(section => {
-            observer.observe(section);
-        });
+        sections.forEach(section => observer.observe(section));
     </script>
 </body>
 </html>
