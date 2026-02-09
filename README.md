@@ -4,6 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Prime Solutions | Digital Agency</title>
 
+<!-- Google Fonts & Font Awesome -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
@@ -26,7 +27,7 @@ header a:hover{color:#ffc107;}
 /* HERO */
 .hero{
 min-height:100vh;
-background:linear-gradient(rgba(13,110,253,.6), rgba(102,16,242,.6)), url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8dGVjaHx8fHx8fDE2NzgwNDEyODg&ixlib=rb-4.0.3&q=80&w=1600');
+background:linear-gradient(rgba(13,110,253,.6), rgba(102,16,242,.6)), url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1600');
 background-size:cover;background-position:center;
 color:#fff;display:flex;align-items:center;justify-content:center;text-align:center;padding:40px;}
 .hero h1{font-size:56px;margin-bottom:15px;letter-spacing:1px;}
@@ -88,7 +89,6 @@ footer{background:#111;color:#fff;text-align:center;padding:25px;font-size:15px;
 .whatsapp:hover{transform:scale(1.1);}
 </style>
 </head>
-
 <body>
 
 <header>
@@ -115,7 +115,7 @@ footer{background:#111;color:#fff;text-align:center;padding:25px;font-size:15px;
 
 <!-- ABOUT -->
 <section id="about" class="about">
-<img src="https://images.unsplash.com/photo-1593642634315-48f5414c3ad9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8dGVhbXx8fHx8fDE2NzgwNDEyODg&ixlib=rb-4.0.3&q=80&w=600" alt="About Image">
+<img src="https://images.unsplash.com/photo-1593642634315-48f5414c3ad9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=600&q=80" alt="About Image">
 <div class="about-text">
 <h2 class="section-title">About Us</h2>
 <p>We provide professional WordPress websites, SEO services, and modern designs to help businesses grow online. Our team ensures premium quality and user-friendly solutions for every client.</p>
@@ -189,7 +189,7 @@ footer{background:#111;color:#fff;text-align:center;padding:25px;font-size:15px;
 © 2026 Prime Solutions — All Rights Reserved
 </footer>
 
-<a href="#" class="whatsapp">💬</a>
+<a href="https://wa.me/923001234567" class="whatsapp">💬</a>
 
 </body>
 </html>
