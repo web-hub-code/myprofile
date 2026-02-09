@@ -26,7 +26,7 @@ header a:hover{color:#ffc107;}
 /* HERO */
 .hero{
 min-height:100vh;
-background:linear-gradient(rgba(13,110,253,.6), rgba(102,16,242,.6)), url('https://source.unsplash.com/1600x900/?technology,office');
+background:linear-gradient(rgba(13,110,253,.6), rgba(102,16,242,.6)), url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8dGVjaHx8fHx8fDE2NzgwNDEyODg&ixlib=rb-4.0.3&q=80&w=1600');
 background-size:cover;background-position:center;
 color:#fff;display:flex;align-items:center;justify-content:center;text-align:center;padding:40px;}
 .hero h1{font-size:56px;margin-bottom:15px;letter-spacing:1px;}
@@ -115,7 +115,7 @@ footer{background:#111;color:#fff;text-align:center;padding:25px;font-size:15px;
 
 <!-- ABOUT -->
 <section id="about" class="about">
-<img src="https://source.unsplash.com/600x400/?office,team" alt="About Image">
+<img src="https://images.unsplash.com/photo-1593642634315-48f5414c3ad9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8dGVhbXx8fHx8fDE2NzgwNDEyODg&ixlib=rb-4.0.3&q=80&w=600" alt="About Image">
 <div class="about-text">
 <h2 class="section-title">About Us</h2>
 <p>We provide professional WordPress websites, SEO services, and modern designs to help businesses grow online. Our team ensures premium quality and user-friendly solutions for every client.</p>
@@ -144,10 +144,10 @@ footer{background:#111;color:#fff;text-align:center;padding:25px;font-size:15px;
 <section id="portfolio">
 <h2 class="section-title">Our Work</h2>
 <div class="portfolio">
-<img src="https://source.unsplash.com/400x300/?website,1" alt="Portfolio 1">
-<img src="https://source.unsplash.com/400x300/?website,2" alt="Portfolio 2">
-<img src="https://source.unsplash.com/400x300/?website,3" alt="Portfolio 3">
-<img src="https://source.unsplash.com/400x300/?website,4" alt="Portfolio 4">
+<img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400&q=80" alt="Portfolio 1">
+<img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400&q=80" alt="Portfolio 2">
+<img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400&q=80" alt="Portfolio 3">
+<img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400&q=80" alt="Portfolio 4">
 </div>
 </section>
 
@@ -155,12 +155,12 @@ footer{background:#111;color:#fff;text-align:center;padding:25px;font-size:15px;
 <section id="testimonials" class="testimonials">
 <h2 class="section-title">Testimonials</h2>
 <div class="card">
-<img src="https://source.unsplash.com/80x80/?person,1" alt="Client 1">
+<img src="https://images.unsplash.com/photo-1595152772835-219674b2a8a1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=80&q=80" alt="Client 1">
 <p>"Amazing service! Highly recommend Prime Solutions."</p>
 <strong>- Client A</strong>
 </div>
 <div class="card">
-<img src="https://source.unsplash.com/80x80/?person,2" alt="Client 2">
+<img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=80&q=80" alt="Client 2">
 <p>"Professional team and fast delivery. Great experience."</p>
 <strong>- Client B</strong>
 </div>
