@@ -1,195 +1,182 @@
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Prime Solutions | Digital Agency</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Live Connect</title>
 
-<!-- Google Fonts & Font Awesome -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
-html{scroll-behavior:smooth;}
-body{background:#f5f7fb;color:#333;line-height:1.6;}
+:root{--bg:#f0f2f5;--card:#fff;--me:#dcf8c6;--other:#fff;--pri:#25D366}
+body.dark{--bg:#0b141a;--card:#111b21;--me:#005c4b;--other:#1f2c34}
+body{margin:0;font-family:system-ui;background:var(--bg)}
 
-/* NAVBAR */
-header{
-position:fixed;top:0;width:100%;z-index:1000;
-background:rgba(13,110,253,.95);
-padding:15px 60px;
-display:flex;justify-content:space-between;align-items:center;
-transition:0.3s;}
-header h2{color:#fff;letter-spacing:1px;}
-header a{color:#fff;text-decoration:none;margin-left:20px;font-weight:500;transition:0.2s;}
-header a:hover{color:#ffc107;}
+header{height:56px;background:var(--pri);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700}
 
-/* HERO */
-.hero{
-min-height:100vh;
-background:linear-gradient(rgba(13,110,253,.6), rgba(102,16,242,.6)), url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1600');
-background-size:cover;background-position:center;
-color:#fff;display:flex;align-items:center;justify-content:center;text-align:center;padding:40px;}
-.hero h1{font-size:56px;margin-bottom:15px;letter-spacing:1px;}
-.hero p{font-size:20px;opacity:.9;margin-bottom:25px;}
-.hero button{margin-top:25px;background:#fff;color:#0d6efd;border:none;padding:16px 38px;border-radius:50px;font-size:17px;cursor:pointer;transition:0.3s;}
-.hero button:hover{background:#ffc107;color:#fff;transform:scale(1.05);}
+.hero{height:180px;background-size:cover;color:#fff;display:flex;align-items:center;justify-content:center;font-size:20px;text-shadow:0 2px 6px #000}
 
-/* SECTIONS */
-section{padding:100px 60px;}
-.section-title{text-align:center;margin-bottom:60px;font-size:36px;font-weight:600;position:relative;}
-.section-title::after{content:'';display:block;width:80px;height:4px;background:#0d6efd;margin:15px auto 0;border-radius:2px;}
+.login{position:fixed;inset:0;background:var(--bg);display:flex;align-items:center;justify-content:center}
+.login div{background:var(--card);padding:20px;border-radius:12px;width:90%}
+.login input{width:100%;padding:12px;margin:10px 0}
 
-/* ABOUT */
-.about{display:flex;flex-wrap:wrap;align-items:center;gap:40px;}
-.about img{flex:1 1 400px;border-radius:20px;max-width:100%;box-shadow:0 20px 40px rgba(0,0,0,.1);}
-.about-text{flex:1 1 400px;font-size:18px;color:#555;}
+.app{display:none;flex-direction:column;height:calc(100vh - 236px)}
 
-/* STATS */
-.stats{background:#fff;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));text-align:center;gap:20px;padding:60px 40px;border-radius:15px;box-shadow:0 20px 40px rgba(0,0,0,.08);}
-.stats div{padding:20px;}
-.stats h2{color:#0d6efd;font-size:38px;margin-bottom:10px;}
-.stats p{font-size:16px;color:#555;}
+.users{display:flex;gap:8px;padding:8px;overflow-x:auto;background:var(--card)}
+.user{padding:6px 12px;border-radius:20px;background:#00000015;font-size:14px}
+.user::before{content:"● ";color:#25D366}
+.group{background:#00000030}
 
-/* SERVICES */
-.services{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:30px;}
-.card{background:#fff;padding:40px;border-radius:20px;box-shadow:0 20px 40px rgba(0,0,0,.08);text-align:center;transition:0.4s;}
-.card:hover{transform:translateY(-10px);box-shadow:0 25px 50px rgba(0,0,0,.12);}
-.card i{font-size:50px;color:#0d6efd;margin-bottom:20px;transition:0.3s;}
-.card:hover i{color:#ffc107;}
+.chat{flex:1;display:flex;flex-direction:column;min-height:0}
+.chat-head{padding:6px;background:var(--card);display:flex;justify-content:space-between;font-size:13px}
 
-/* PORTFOLIO */
-.portfolio{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:25px;}
-.portfolio img{width:100%;border-radius:15px;transition:0.3s;}
-.portfolio img:hover{transform:scale(1.05);}
+.messages{flex:1;overflow-y:auto;padding:8px}
+.msg{max-width:75%;margin-bottom:6px;padding:8px;border-radius:12px;font-size:13px}
+.me{background:var(--me);margin-left:auto}
+.other{background:var(--other)}
+.msg img{max-width:180px;border-radius:8px}
 
-/* TESTIMONIALS */
-.testimonials{background:#f1f3f6;padding:80px 60px;border-radius:20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px;}
-.testimonials .card{background:#fff;padding:30px;border-radius:20px;box-shadow:0 15px 30px rgba(0,0,0,.08);text-align:center;}
-.testimonials .card img{width:80px;height:80px;border-radius:50%;margin-bottom:15px;object-fit:cover;}
-.testimonials .card p{font-style:italic;color:#555;margin:15px 0;}
-
-/* PRICING */
-.pricing{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px;}
-.pricing .card{background:#fff;padding:35px;border-radius:20px;box-shadow:0 15px 30px rgba(0,0,0,.08);text-align:center;transition:0.3s;}
-.pricing .card:hover{transform:translateY(-10px);box-shadow:0 20px 40px rgba(0,0,0,.12);}
-.pricing .card h3{margin-bottom:15px;}
-
-/* CONTACT */
-.contact form{max-width:550px;margin:auto;background:#fff;padding:50px;border-radius:20px;box-shadow:0 20px 40px rgba(0,0,0,.08);}
-.contact input,.contact textarea{width:100%;padding:15px;margin-bottom:20px;border-radius:12px;border:1px solid #ccc;font-size:16px;}
-.contact button{width:100%;padding:16px;background:#0d6efd;color:#fff;border:none;border-radius:50px;font-size:17px;transition:0.3s;cursor:pointer;}
-.contact button:hover{background:#ffc107;color:#fff;}
-
-/* FOOTER */
-footer{background:#111;color:#fff;text-align:center;padding:25px;font-size:15px;}
-
-/* WHATSAPP */
-.whatsapp{position:fixed;bottom:25px;right:25px;background:#25d366;color:#fff;padding:16px;border-radius:50%;font-size:24px;text-decoration:none;transition:0.3s;}
-.whatsapp:hover{transform:scale(1.1);}
+.input{display:flex;gap:6px;padding:6px;background:var(--card)}
+.input input{flex:1;padding:10px;border-radius:20px;border:1px solid #ccc}
+.input button{width:38px;height:38px;border-radius:50%;border:none;background:var(--pri);color:#fff}
 </style>
 </head>
+
 <body>
 
-<header>
-<h2>Prime Solutions</h2>
-<nav>
-<a href="#home">Home</a>
-<a href="#about">About</a>
-<a href="#services">Services</a>
-<a href="#portfolio">Portfolio</a>
-<a href="#testimonials">Testimonials</a>
-<a href="#pricing">Pricing</a>
-<a href="#contact">Contact</a>
-</nav>
-</header>
+<header>Live Connect</header>
+<div class="hero" id="hero">Welcome to Live Connect</div>
 
-<!-- HERO -->
-<div class="hero" id="home">
-<div>
-<h1>Prime Solutions</h1>
-<p>We help businesses grow online with modern solutions</p>
-<button>Get Free Consultation</button>
-</div>
+<div class="login" id="login">
+  <div>
+    <h3>Enter Full Name</h3>
+    <input id="name">
+    <button onclick="start()">Start Chat</button>
+  </div>
 </div>
 
-<!-- ABOUT -->
-<section id="about" class="about">
-<img src="https://images.unsplash.com/photo-1593642634315-48f5414c3ad9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=600&q=80" alt="About Image">
-<div class="about-text">
-<h2 class="section-title">About Us</h2>
-<p>We provide professional WordPress websites, SEO services, and modern designs to help businesses grow online. Our team ensures premium quality and user-friendly solutions for every client.</p>
+<div class="app" id="app">
+  <div class="users" id="users"></div>
+
+  <div class="chat">
+    <div class="chat-head">
+      <span id="chatWith">Select user</span>
+      <span>
+        <button onclick="clearChat()">Clear</button>
+        <button onclick="delGroup()">Delete Group</button>
+        <i class="fa fa-moon" onclick="document.body.classList.toggle('dark')"></i>
+      </span>
+    </div>
+
+    <div class="messages" id="msgs"></div>
+
+    <div class="input">
+      <input id="msg">
+      <input type="file" id="img" accept="image/*" hidden>
+      <button onclick="send()">➤</button>
+      <button onclick="img.click()">🖼️</button>
+    </div>
+  </div>
 </div>
-</section>
 
-<!-- STATS -->
-<section class="stats">
-<div><h2>200+</h2><p>Clients</p></div>
-<div><h2>450+</h2><p>Projects</p></div>
-<div><h2>7+</h2><p>Years Experience</p></div>
-</section>
+<script type="module">
+import{initializeApp}from"https://www.gstatic.com/firebasejs/12.9.0/firebase-app.js";
+import{getDatabase,ref,set,push,onValue,remove,onDisconnect}from"https://www.gstatic.com/firebasejs/12.9.0/firebase-database.js";
+import{getStorage,ref as sRef,uploadBytes,getDownloadURL}from"https://www.gstatic.com/firebasejs/12.9.0/firebase-storage.js";
 
-<!-- SERVICES -->
-<section id="services">
-<h2 class="section-title">Our Services</h2>
-<div class="services">
-<div class="card"><i class="fa-solid fa-code"></i><h3>Web Development</h3></div>
-<div class="card"><i class="fa-brands fa-wordpress"></i><h3>WordPress Websites</h3></div>
-<div class="card"><i class="fa-solid fa-chart-line"></i><h3>SEO Marketing</h3></div>
-<div class="card"><i class="fa-solid fa-mobile-screen-button"></i><h3>Responsive Design</h3></div>
-</div>
-</section>
+const firebaseConfig={
+apiKey:"AIzaSyCSD1O9tV7xDZu_kljq-0NMhA2DqtW5quE",
+databaseURL:"https://live-chat-b810c-default-rtdb.firebaseio.com",
+projectId:"live-chat-b810c",
+storageBucket:"live-chat-b810c.appspot.com"
+};
 
-<!-- PORTFOLIO -->
-<section id="portfolio">
-<h2 class="section-title">Our Work</h2>
-<div class="portfolio">
-<img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400&q=80" alt="Portfolio 1">
-<img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400&q=80" alt="Portfolio 2">
-<img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400&q=80" alt="Portfolio 3">
-<img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400&q=80" alt="Portfolio 4">
-</div>
-</section>
+const app=initializeApp(firebaseConfig),
+db=getDatabase(app),
+st=getStorage(app);
 
-<!-- TESTIMONIALS -->
-<section id="testimonials" class="testimonials">
-<h2 class="section-title">Testimonials</h2>
-<div class="card">
-<img src="https://images.unsplash.com/photo-1595152772835-219674b2a8a1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=80&q=80" alt="Client 1">
-<p>"Amazing service! Highly recommend Prime Solutions."</p>
-<strong>- Client A</strong>
-</div>
-<div class="card">
-<img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=80&q=80" alt="Client 2">
-<p>"Professional team and fast delivery. Great experience."</p>
-<strong>- Client B</strong>
-</div>
-</section>
+let me="",cur="",isGroup=false,creator={};
 
-<!-- PRICING -->
-<section id="pricing" class="pricing">
-<h2 class="section-title">Pricing Plans</h2>
-<div class="card"><h3>Basic</h3><p>Website setup, 5 pages</p><p>PKR 15,000</p></div>
-<div class="card"><h3>Professional</h3><p>Full WordPress website + SEO</p><p>PKR 25,000</p></div>
-<div class="card"><h3>Premium</h3><p>Full website + blog + support</p><p>PKR 35,000</p></div>
-</section>
+window.start=()=>{
+me=name.value.trim();
+if(!me)return;
+login.style.display="none";
+app.style.display="flex";
+set(ref(db,"users/"+me),{online:true});
+onDisconnect(ref(db,"users/"+me)).set({online:false});
+load();
+};
 
-<!-- CONTACT -->
-<section id="contact" class="contact">
-<h2 class="section-title">Contact Us</h2>
-<form>
-<input type="text" placeholder="Your Name">
-<input type="email" placeholder="Email Address">
-<textarea rows="4" placeholder="Your Message"></textarea>
-<button>Send Message</button>
-</form>
-</section>
+function load(){
+onValue(ref(db,"users"),s=>{
+users.innerHTML="";
+s.forEach(u=>{
+if(u.val().online&&u.key!==me){
+let d=document.createElement("div");
+d.className="user";
+d.textContent=u.key;
+d.onclick=()=>open(u.key,false);
+users.appendChild(d);
+}});
+});
+onValue(ref(db,"groups"),s=>{
+s.forEach(g=>{
+creator[g.key]=g.val().by;
+let d=document.createElement("div");
+d.className="user group";
+d.textContent=g.key;
+d.onclick=()=>open(g.key,true);
+users.appendChild(d);
+});
+});
+}
 
-<footer>
-© 2026 Prime Solutions — All Rights Reserved
-</footer>
+window.open=(u,g)=>{
+cur=u;isGroup=g;
+chatWith.textContent=u;
+let p=g?"groupChats/"+u:"chats/"+[me,u].sort().join("_");
+onValue(ref(db,p),s=>{
+msgs.innerHTML="";
+s.forEach(m=>{
+let d=document.createElement("div");
+d.className="msg "+(m.val().from===me?"me":"other");
+d.innerHTML=m.val().img?`<img src="${m.val().img}">`:m.val().text;
+if(m.val().from===me){
+let b=document.createElement("button");
+b.textContent="🗑️";
+b.onclick=()=>remove(ref(db,p+"/"+m.key));
+d.appendChild(b);
+}
+msgs.appendChild(d);
+});
+msgs.scrollTop=msgs.scrollHeight;
+});
+};
 
-<a href="https://wa.me/923001234567" class="whatsapp">💬</a>
+window.send=()=>{
+if(!cur)return;
+push(ref(db,isGroup?"groupChats/"+cur:"chats/"+[me,cur].sort().join("_")),{from:me,text:msg.value});
+msg.value="";
+};
+
+img.onchange=async()=>{
+let f=img.files[0];
+let r=sRef(st,"imgs/"+Date.now()+f.name);
+await uploadBytes(r,f);
+let u=await getDownloadURL(r);
+push(ref(db,isGroup?"groupChats/"+cur:"chats/"+[me,cur].sort().join("_")),{from:me,img:u});
+};
+
+window.clearChat=()=>remove(ref(db,isGroup?"groupChats/"+cur:"chats/"+[me,cur].sort().join("_")));
+window.delGroup=()=>{if(isGroup&&creator[cur]===me)remove(ref(db,"groups/"+cur))};
+
+const imgs=[
+"https://images.unsplash.com/photo-1525182008055-f88b95ff7980",
+"https://images.unsplash.com/photo-1515378791036-0648a3ef77b2",
+"https://images.unsplash.com/photo-1492724441997-5dc865305da7"
+];
+let i=0;
+setInterval(()=>hero.style.backgroundImage=`url(${imgs[i++%imgs.length]})`,3000);
+</script>
 
 </body>
 </html>
