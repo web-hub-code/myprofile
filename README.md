@@ -2,7 +2,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Muhammad Nazim | Official Portfolio</title>
+    <title>Muhammad Nazim | Professional Profile</title>
+    
+    <meta name="description" content="Muhammad Nazim - Professional Web Solutions & Digital Expert">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -21,55 +23,57 @@
         
         body { background-color: var(--bg); color: white; overflow-x: hidden; width: 100%; }
 
-        /* Video Background */
+        /* Background Video */
         #bg-video { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -2; object-fit: cover; filter: brightness(0.25); }
 
-        .container { width: 100%; max-width: 500px; margin: 0 auto; padding: 15px 15px 100px; }
+        .container { width: 100%; max-width: 550px; margin: 0 auto; padding: 20px 15px 120px; }
 
-        /* Glass Cards - Responsive Fix */
+        /* Glassmorphism Cards */
         .card { 
             background: var(--glass); 
-            backdrop-filter: blur(15px); 
+            backdrop-filter: blur(20px); 
             border: 1px solid var(--border); 
-            border-radius: 25px; 
-            padding: 20px; 
-            margin-bottom: 20px; 
-            width: 100%;
+            border-radius: 28px; 
+            padding: 25px; 
+            margin-bottom: 20px;
         }
 
-        .hero { text-align: center; padding: 40px 15px; }
+        .hero { text-align: center; padding: 50px 20px; }
 
         .profile-pic {
-            width: 120px; height: 120px; border-radius: 50%;
-            border: 3px solid var(--primary); object-fit: cover;
-            box-shadow: 0 0 25px var(--primary); margin-bottom: 15px;
+            width: 130px; height: 130px; border-radius: 50%;
+            border: 4px solid var(--primary); object-fit: cover;
+            box-shadow: 0 0 30px rgba(0, 242, 254, 0.5); margin-bottom: 15px;
         }
 
-        h1 { font-size: 1.8rem; font-weight: 800; background: linear-gradient(45deg, var(--primary), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        h1 { font-size: 2rem; font-weight: 800; background: linear-gradient(45deg, var(--primary), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 
-        /* Copy Number Button */
+        /* Service Gallery */
+        .gallery-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin-top: 15px; }
+        .gal-item { border-radius: 18px; overflow: hidden; position: relative; height: 120px; border: 1px solid var(--border); }
+        .gal-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+        .gal-item:hover img { transform: scale(1.1); }
+
+        /* Copy Button */
         .copy-btn {
             background: linear-gradient(45deg, var(--primary), var(--secondary));
-            border: none; color: white; padding: 12px; width: 100%;
-            border-radius: 12px; font-weight: 600; cursor: pointer; margin-top: 15px;
+            border: none; color: white; padding: 15px; width: 100%;
+            border-radius: 15px; font-weight: 700; cursor: pointer; margin-top: 10px;
             display: flex; align-items: center; justify-content: center; gap: 10px;
+            font-size: 1rem;
         }
 
-        /* Bottom Nav - Perfect Mobile Fit */
+        /* Bottom Menu */
         .bottom-nav {
-            position: fixed; bottom: 15px; left: 50%; transform: translateX(-50%);
-            width: 90%; background: rgba(0,0,0,0.8);
-            backdrop-filter: blur(20px); border-radius: 30px; border: 1px solid var(--border);
-            display: flex; justify-content: space-around; padding: 12px; z-index: 1000;
+            position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
+            width: 85%; background: rgba(0,0,0,0.8);
+            backdrop-filter: blur(25px); border-radius: 35px; border: 1px solid var(--border);
+            display: flex; justify-content: space-around; padding: 14px; z-index: 1000;
         }
-        .nav-item { color: white; font-size: 1.1rem; text-decoration: none; }
+        .nav-item { color: white; font-size: 1.3rem; transition: 0.3s; }
+        .nav-item:hover { color: var(--primary); transform: scale(1.2); }
 
-        /* Stats Grid */
-        .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; text-align: center; }
-        .stats-grid h2 { font-size: 1.4rem; color: var(--primary); }
-        .stats-grid p { font-size: 0.7rem; opacity: 0.8; }
-
-        footer { text-align: center; font-size: 0.75rem; opacity: 0.5; margin-top: 20px; }
+        footer { text-align: center; font-size: 0.8rem; opacity: 0.4; padding: 20px; }
     </style>
 </head>
 <body>
@@ -81,52 +85,53 @@
     <nav class="bottom-nav">
         <a href="#" class="nav-item"><i class="fas fa-home"></i></a>
         <a href="mailto:webhub262@gmail.com" class="nav-item"><i class="fas fa-envelope"></i></a>
-        <a href="https://wa.me/923000000000" class="nav-item"><i class="fab fa-whatsapp"></i></a>
-        <a href="https://instagram.com/mr_nazim073" class="nav-item"><i class="fab fa-instagram"></i></a>
+        <a href="https://wa.me/923000000000" class="nav-item" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://instagram.com/mr_nazim073" class="nav-item" target="_blank"><i class="fab fa-instagram"></i></a>
     </nav>
 
     <div class="container">
-        <section class="card hero" data-aos="fade-down">
+        <section class="card hero" data-aos="zoom-out">
             <img src="Snapchat-2096615446.jpg" alt="Muhammad Nazim" class="profile-pic">
             <h1>Muhammad Nazim</h1>
-            <p style="font-size: 0.9rem; margin-top: 5px; opacity: 0.8;">Creative Web Developer</p>
+            <p style="color: var(--primary); letter-spacing: 2px; font-size: 0.8rem; margin-top: 5px; font-weight: 600;">PRIME SOLUTIONS & DIGITAL EXPERT</p>
         </section>
 
-        <div class="card stats-grid" data-aos="fade-up">
-            <div><h2>40+</h2><p>Projects</p></div>
-            <div><h2>100%</h2><p>Quality</p></div>
-            <div><h2>24/7</h2><p>Support</p></div>
+        <div class="card" data-aos="fade-up">
+            <h3 style="font-size: 1.1rem; margin-bottom: 10px;"><i class="fas fa-th-large" style="color: var(--accent);"></i> Prime Solutions</h3>
+            <div class="gallery-grid">
+                <div class="gal-item"><img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400"></div>
+                <div class="gal-item"><img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=400"></div>
+            </div>
         </div>
 
         <div class="card" data-aos="fade-up">
-            <h3><i class="fas fa-phone-alt" style="color: var(--primary);"></i> Contact Me</h3>
-            <p style="font-size: 0.85rem; margin-top: 5px; opacity: 0.7;">Click niche button par karein number copy karne ke liye:</p>
-            <button class="copy-btn" onclick="copyNumber()">
-                <i class="fas fa-copy"></i> <span id="num-text">+92 300 0000000</span>
+            <h3 style="font-size: 1.1rem; margin-bottom: 5px;">Get In Touch</h3>
+            <p style="font-size: 0.8rem; opacity: 0.7; margin-bottom: 15px;">Official number copy karke WhatsApp par rabta karein:</p>
+            <button class="copy-btn" onclick="copyNum()">
+                <i class="fas fa-copy"></i> <span id="btn-txt">+92 300 0000000</span>
             </button>
         </div>
 
         <div class="card" data-aos="fade-up">
-            <h3><i class="fas fa-id-card" style="color: var(--accent);"></i> About</h3>
-            <p style="font-size: 0.9rem; line-height: 1.6; margin-top: 10px;">
-                Main Muhammad Nazim hoon. Professional web designs aur interactive digital experiences banana meri pehchan hai.
+            <h3 style="font-size: 1.1rem; margin-bottom: 10px;">About Me</h3>
+            <p style="font-size: 0.85rem; line-height: 1.7; opacity: 0.9;">
+                Professionalism aur Excellence mera mission hai. Main modern web tech ko use karte hue innovative solutions provide karta hoon.
             </p>
         </div>
 
-        <footer>© 2026 | MUHAMMAD NAZIM | MOBILE OPTIMIZED</footer>
+        <footer>© 2026 | MUHAMMAD NAZIM | ALL RIGHTS RESERVED</footer>
     </div>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({ duration: 800, once: true });
 
-        function copyNumber() {
-            const num = "+923000000000"; // Apna asli number yahan likhein
-            navigator.clipboard.writeText(num);
-            document.getElementById('num-text').innerText = "Copied!";
-            setTimeout(() => {
-                document.getElementById('num-text').innerText = "+92 300 0000000";
-            }, 2000);
+        function copyNum() {
+            const myNum = "+923000000000"; // Apna asli number yahan update karein
+            navigator.clipboard.writeText(myNum);
+            const btn = document.getElementById('btn-txt');
+            btn.innerText = "Number Copied!";
+            setTimeout(() => { btn.innerText = "+92 300 0000000"; }, 2000);
         }
     </script>
 </body>
