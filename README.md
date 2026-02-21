@@ -2,194 +2,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Premium Mobile-Friendly Portfolio</title>
+    <title>Premium Digital Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary: #00f2fe;
             --secondary: #4facfe;
-            --bg: #080a12;
-            --glass: rgba(255, 255, 255, 0.05);
+            --accent: #f093fb;
+            --bg: #05070a;
+            --glass: rgba(255, 255, 255, 0.03);
             --border: rgba(255, 255, 255, 0.1);
         }
 
-        * {
-            margin: 0; padding: 0; box-sizing: border-box;
-            font-family: 'Outfit', sans-serif;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Outfit', sans-serif; }
 
         body {
             background-color: var(--bg);
             color: white;
             overflow-x: hidden;
-            background: radial-gradient(circle at top right, #1a2a6c, transparent),
-                        radial-gradient(circle at bottom left, #b21f1f, transparent);
+            background: radial-gradient(circle at 20% 30%, #1e2a6c 0%, transparent 40%),
+                        radial-gradient(circle at 80% 70%, #b21f1f 0%, transparent 40%);
             background-attachment: fixed;
-            line-height: 1.6;
         }
 
-        .container { 
-            max-width: 1100px; 
-            margin: 0 auto; 
-            padding: 20px; /* Mobile par padding kam ki hai */
-        }
+        .container { max-width: 900px; margin: 0 auto; padding: 20px; }
 
-        /* Hero Section */
+        /* Stylish Hero Section */
         .hero {
             background: var(--glass);
-            backdrop-filter: blur(15px);
-            padding: 40px 20px;
-            border-radius: 20px;
+            backdrop-filter: blur(20px);
+            padding: 50px 20px;
+            border-radius: 30px;
             border: 1px solid var(--border);
             text-align: center;
-            margin-bottom: 25px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+            margin-top: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
         }
+
+        .profile-container { position: relative; width: 160px; height: 160px; margin: 0 auto 20px; }
 
         .profile-pic {
-            width: 120px; height: 120px;
-            border-radius: 50%;
-            border: 3px solid var(--primary);
-            box-shadow: 0 0 20px var(--primary);
-            margin-bottom: 15px;
+            width: 100%; height: 100%;
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; /* Trendy organic shape */
+            border: 4px solid var(--primary);
             object-fit: cover;
+            animation: morph 8s ease-in-out infinite;
         }
 
-        h1 { 
-            font-size: clamp(2rem, 8vw, 3.5rem); /* Ye text ko mobile par chota rakhta hai */
-            background: linear-gradient(to right, #00f2fe, #4facfe); 
-            -webkit-background-clip: text; 
-            -webkit-text-fill-color: transparent; 
-        }
-        
-        /* Responsive Grid */
-        .grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(100%, 1fr)); /* Mobile par 1 column */
-            gap: 20px; 
+        @keyframes morph {
+            0% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+            50% { border-radius: 50% 50% 20% 80% / 25% 80% 20% 75%; }
+            100% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
         }
 
-        /* Desktop par 2 columns ho jayenge */
-        @media (min-width: 768px) {
-            .grid { grid-template-columns: repeat(2, 1fr); }
-            .container { padding: 40px; }
-        }
-        
+        h1 { font-size: 2.8rem; margin-bottom: 5px; background: linear-gradient(45deg, var(--primary), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
+        /* Info Cards */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(100%, 1fr)); gap: 20px; }
+        @media (min-width: 768px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+
         .card {
             background: var(--glass);
-            padding: 25px;
+            padding: 30px;
             border-radius: 20px;
             border: 1px solid var(--border);
-            backdrop-filter: blur(10px);
+            transition: 0.3s;
         }
 
-        /* Skill Bars */
-        .skill-bar {
-            background: rgba(255,255,255,0.1);
-            height: 8px;
-            border-radius: 5px;
-            margin: 10px 0 20px 0;
-            overflow: hidden;
+        .card:hover { transform: translateY(-10px); border-color: var(--primary); background: rgba(255,255,255,0.06); }
+
+        .skill-tag {
+            display: inline-block;
+            background: rgba(0, 242, 254, 0.1);
+            color: var(--primary);
+            padding: 5px 15px;
+            border-radius: 50px;
+            margin: 5px;
+            font-size: 0.85rem;
+            border: 1px solid rgba(0, 242, 254, 0.3);
         }
 
-        .skill-progress {
-            background: linear-gradient(to right, var(--primary), var(--secondary));
-            height: 100%;
-        }
+        /* Buttons & Socials */
+        .social-links { margin-top: 20px; display: flex; justify-content: center; gap: 20px; }
+        .social-icon { font-size: 1.5rem; color: white; transition: 0.3s; }
+        .social-icon:hover { color: var(--primary); transform: scale(1.2); }
 
-        /* Projects Gallery */
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); /* Mobile par images choti aur adjust hongi */
-            gap: 12px;
-        }
-
-        .project-img {
-            width: 100%;
-            border-radius: 12px;
-            border: 1px solid var(--border);
-        }
-
-        /* Form Controls */
-        .contact-input {
-            width: 100%;
-            padding: 12px;
-            margin: 8px 0;
-            background: rgba(255,255,255,0.07);
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            color: white;
-            font-size: 16px; /* Mobile par zoom rokne ke liye 16px zaroori hai */
-        }
-
-        .btn-glow {
-            width: 100%; /* Mobile par full width button */
+        .contact-btn {
+            display: block; width: 100%; padding: 15px; margin-top: 20px;
             background: linear-gradient(45deg, var(--primary), var(--secondary));
-            border: none;
-            padding: 15px;
-            color: white;
-            font-weight: bold;
-            border-radius: 15px;
-            cursor: pointer;
-            margin-top: 10px;
+            border: none; border-radius: 15px; color: white; font-weight: bold;
+            text-transform: uppercase; cursor: pointer; transition: 0.3s;
         }
+        .contact-btn:hover { letter-spacing: 2px; box-shadow: 0 0 20px var(--primary); }
 
-        @media (min-width: 768px) {
-            .btn-glow { width: auto; padding: 15px 40px; }
-        }
-
-        footer { text-align: center; margin-top: 40px; opacity: 0.5; font-size: 0.8rem; padding-bottom: 20px; }
-
+        footer { text-align: center; margin-top: 50px; padding: 20px; font-size: 0.8rem; opacity: 0.4; }
     </style>
 </head>
 <body>
 
     <div class="container">
         <div class="hero">
-            <img src="https://via.placeholder.com/150" alt="Profile" class="profile-pic">
-            <h1>MERA NAAM</h1>
-            <p style="color: #cbd5e1; margin-top: 10px;">Mobile & Web Enthusiast</p>
-            <div style="display: flex; justify-content: center; gap: 20px; margin-top: 15px; font-size: 1.5rem;">
-                <a href="#" style="color: white;"><i class="fab fa-github"></i></a>
-                <a href="#" style="color: white;"><i class="fab fa-linkedin"></i></a>
+            <div class="profile-container">
+                <img src="Snapchat-2096615446.jpg" alt="My Profile" class="profile-pic">
+            </div>
+            <h1>Aapka Naam</h1>
+            <p style="color: #94a3b8; letter-spacing: 1px;">CREATIVE DEVELOPER | UI/UX DESIGNER</p>
+            
+            <div class="social-links">
+                <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
             </div>
         </div>
 
         <div class="grid">
             <div class="card">
-                <h2><i class="fas fa-user-astronaut"></i> About Me</h2>
-                <p style="font-size: 0.95rem; color: #94a3b8; margin-top: 10px;">
-                    Ye website ab fully responsive hai! Aap ise mobile par check karein, ye perfect dikhegi.
-                </p>
+                <h3><i class="fas fa-bolt" style="color: var(--primary);"></i> My Expertise</h3>
+                <p style="color: #94a3b8; margin: 15px 0;">Main digital experiences create karta hoon jo modern aur user-friendly hote hain.</p>
+                <div class="skill-tag">Web Design</div>
+                <div class="skill-tag">GitHub</div>
+                <div class="skill-tag">Modern UI</div>
+                <div class="skill-tag">SEO</div>
             </div>
 
             <div class="card">
-                <h2><i class="fas fa-code"></i> Skills</h2>
-                <p>Web Design (90%)</p>
-                <div class="skill-bar"><div class="skill-progress" style="width: 90%;"></div></div>
-                <p>Mobile Layout (95%)</p>
-                <div class="skill-bar"><div class="skill-progress" style="width: 95%;"></div></div>
+                <h3><i class="fas fa-paper-plane" style="color: var(--accent);"></i> Quick Connect</h3>
+                <input type="email" placeholder="Aapka Email" style="width: 100%; padding: 10px; margin-top: 15px; background: rgba(0,0,0,0.3); border: 1px solid var(--border); border-radius: 8px; color: white;">
+                <button class="contact-btn">Message Bhein</button>
             </div>
-        </div>
-
-        <div class="card" style="margin-top: 20px;">
-            <h2><i class="fas fa-th-large"></i> Projects</h2>
-            <div class="gallery">
-                <img src="https://via.placeholder.com/300x200" class="project-img" alt="Work 1">
-                <img src="https://via.placeholder.com/300x200" class="project-img" alt="Work 2">
-            </div>
-        </div>
-
-        <div class="card" style="margin-top: 20px;">
-            <h2><i class="fas fa-envelope"></i> Contact</h2>
-            <input type="text" class="contact-input" placeholder="Naam">
-            <textarea class="contact-input" rows="3" placeholder="Message"></textarea>
-            <button class="btn-glow">Send Message</button>
         </div>
 
         <footer>
-            <p>© 2026 Developed by You | Optimized for Mobile</p>
+            DESIGNED BY YOU & GEMINI AI | 2026
         </footer>
     </div>
 
