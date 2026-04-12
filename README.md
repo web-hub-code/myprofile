@@ -16,149 +16,155 @@
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Outfit', sans-serif; scroll-behavior: smooth; }
         body { background: var(--bg); color: white; overflow-x: hidden; }
 
-        /* Animated Background Particles Mockup */
-        .bg-glow { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; background: radial-gradient(circle at 50% 50%, #1a1a2e 0%, #010204 100%); }
-        .orb { position: absolute; width: 300px; height: 300px; background: var(--primary); filter: blur(150px); opacity: 0.15; border-radius: 50%; animation: float 15s infinite; }
-
-        @keyframes float { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(100px, 50px); } }
-
         .container { width: 100%; max-width: 550px; margin: 0 auto; padding: 20px 15px 120px; }
 
-        /* World Class Header */
-        .top-status { display: flex; justify-content: space-between; align-items: center; padding: 12px 20px; background: var(--glass); border-radius: 50px; border: 1px solid var(--border); margin-bottom: 25px; backdrop-filter: blur(10px); }
-        .live-dot { height: 8px; width: 8px; background: #25d366; border-radius: 50%; display: inline-block; box-shadow: 0 0 10px #25d366; animation: pulse 1.5s infinite; }
+        /* Multi-Page Logic */
+        .page-content { display: none; animation: slideUp 0.5s ease forwards; }
+        .page-content.active { display: block; }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
 
-        /* Mega Hero Card */
-        .hero-card { background: var(--glass); backdrop-filter: blur(30px); border: 1px solid var(--border); border-radius: 40px; padding: 35px; text-align: center; position: relative; overflow: hidden; }
-        .pfp { width: 140px; height: 140px; border-radius: 50%; border: 4px solid var(--primary); padding: 5px; box-shadow: 0 0 30px rgba(0, 242, 254, 0.3); margin-bottom: 15px; }
-        .name-gradient { font-size: 2.5rem; font-weight: 800; background: linear-gradient(45deg, var(--primary), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        /* Top Bar */
+        .top-nav { display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; background: var(--glass); backdrop-filter: blur(15px); border-radius: 50px; border: 1px solid var(--border); margin-bottom: 25px; }
 
-        /* Stats Grid */
-        .stats { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-top: 30px; }
-        .stat-box h3 { font-size: 1.5rem; color: var(--primary); }
-        .stat-box p { font-size: 0.6rem; opacity: 0.5; text-transform: uppercase; }
+        /* Modern Cards */
+        .card { background: var(--glass); backdrop-filter: blur(20px); border: 1px solid var(--border); border-radius: 35px; padding: 25px; margin-bottom: 20px; transition: 0.4s; }
+        .card:hover { border-color: var(--primary); transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0, 242, 254, 0.1); }
 
-        /* Service Infinity Grid */
-        .card { background: var(--glass); backdrop-filter: blur(20px); border: 1px solid var(--border); border-radius: 35px; padding: 25px; margin-top: 25px; transition: 0.3s; }
-        .card:hover { border-color: var(--primary); transform: translateY(-5px); }
-        .service-link { display: flex; align-items: center; gap: 15px; margin-bottom: 15px; padding: 15px; background: rgba(255,255,255,0.02); border-radius: 20px; }
+        /* Stats Branding */
+        .stat-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-top: 25px; text-align: center; }
+        .stat-val { color: var(--primary); font-size: 1.5rem; font-weight: 800; }
+        .stat-label { font-size: 0.6rem; opacity: 0.5; text-transform: uppercase; }
 
-        /* Advanced Footer Nav */
-        .nav-dock { position: fixed; bottom: 25px; left: 50%; transform: translateX(-50%); width: 90%; max-width: 450px; background: rgba(10, 10, 10, 0.85); backdrop-filter: blur(25px); border-radius: 50px; border: 1px solid var(--border); display: flex; justify-content: space-around; padding: 18px; z-index: 1000; box-shadow: 0 25px 50px rgba(0,0,0,0.5); }
-        .nav-item { font-size: 1.4rem; color: white; opacity: 0.4; cursor: pointer; transition: 0.3s; }
-        .nav-item.active { color: var(--primary); opacity: 1; transform: scale(1.2); }
+        /* Floating Nav */
+        .dock { position: fixed; bottom: 25px; left: 50%; transform: translateX(-50%); width: 90%; max-width: 450px; background: rgba(10,10,10,0.8); backdrop-filter: blur(25px); border-radius: 50px; border: 1px solid var(--border); display: flex; justify-content: space-around; padding: 18px; z-index: 1000; box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
+        .dock-item { color: white; opacity: 0.4; font-size: 1.3rem; cursor: pointer; transition: 0.3s; }
+        .dock-item.active { color: var(--primary); opacity: 1; transform: scale(1.2); }
 
-        /* UI Buttons */
-        .prime-btn { background: linear-gradient(45deg, var(--primary), var(--secondary)); color: #000; padding: 20px; border-radius: 25px; width: 100%; border: none; font-weight: 800; font-size: 1rem; cursor: pointer; display: flex; justify-content: center; align-items: center; gap: 10px; margin-top: 20px; }
+        /* Buttons */
+        .btn-global { background: linear-gradient(45deg, var(--primary), var(--secondary)); color: #000; padding: 18px; border-radius: 22px; border: none; font-weight: 800; cursor: pointer; width: 100%; display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 15px; }
+        
+        /* AI Assistant */
+        .ai-bubble { position: fixed; bottom: 100px; right: 20px; background: var(--primary); color: #000; padding: 10px 15px; border-radius: 20px 20px 0 20px; font-size: 0.7rem; font-weight: 800; z-index: 999; animation: float 3s infinite; }
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
     </style>
 </head>
 <body>
 
-    <div class="bg-glow">
-        <div class="orb" style="top: 10%; left: -10%;"></div>
-        <div class="orb" style="bottom: 10%; right: -10%; background: var(--accent);"></div>
-    </div>
+    <div class="ai-bubble">CEO Nazim is Online! 🟢</div>
 
     <div class="container">
-        
-        <div class="top-status">
-            <span style="font-size: 0.7rem; font-weight: 800; letter-spacing: 1px;"> <span class="live-dot"></span> TOP 1 GLOBAL AGENCY</span>
-            <button onclick="toggleLang()" id="langBtn" style="background: var(--primary); color:#000; border:none; padding:5px 12px; border-radius:50px; font-size:0.6rem; font-weight:800; cursor:pointer;">URDU</button>
+        <div class="top-nav">
+            <span style="font-weight: 800; color: var(--primary); font-size: 0.8rem;">PRIME SOLUTIONS GLOBAL</span>
+            <button onclick="toggleLang()" id="lBtn" style="background:var(--primary); border:none; padding:5px 12px; border-radius:50px; font-weight:800; font-size:0.6rem; cursor:pointer;">URDU</button>
         </div>
 
-        <section id="home" class="hero-card" data-aos="zoom-in">
-            <img src="Screenshot_2026-04-12-10-02-54-39.png" alt="Nazim" class="pfp">
-            <h1 class="name-gradient" id="m-name">Muhammad Nazim</h1>
-            <p id="m-tag" style="opacity: 0.7; font-size: 0.9rem;">Architect of Digital Ecosystems | CEO</p>
+        <div id="p-home" class="page-content active">
+            <div class="card" style="text-align: center;">
+                <img src="Screenshot_2026-04-12-10-02-54-39.png" style="width: 120px; height: 120px; border-radius: 50%; border: 3px solid var(--primary); margin-bottom: 15px;">
+                <h1 style="font-size: 2.3rem; font-weight: 800; background: linear-gradient(45deg, var(--primary), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;" id="n-txt">Muhammad Nazim</h1>
+                <p style="opacity: 0.7;" id="t-txt">Founder & Global CEO | Prime Solutions</p>
+                
+                <div class="stat-grid">
+                    <div><div class="stat-val">150+</div><div class="stat-label" id="s1">Success Projects</div></div>
+                    <div><div class="stat-val">50+</div><div class="stat-label" id="s2">Global Partners</div></div>
+                    <div><div class="stat-val">5.0</div><div class="stat-label" id="s3">Client Rating</div></div>
+                </div>
+            </div>
             
-            <div class="stats">
-                <div class="stat-box"><h3>150+</h3><p id="s1">Projects</p></div>
-                <div class="stat-box"><h3>50+</h3><p id="s2">Global Clients</p></div>
-                <div class="stat-box"><h3>5.0</h3><p id="s3">Rating ★</p></div>
-            </div>
-        </section>
-
-        <div class="card" data-aos="fade-up">
-            <h3 id="serv-h" style="margin-bottom: 20px;"><i class="fas fa-gem" style="color: var(--primary);"></i> Premium Solutions</h3>
-            <div class="service-link">
-                <i class="fas fa-code-branch" style="color: var(--primary);"></i>
-                <div><h4 id="v1">Next-Gen Web Apps</h4><p style="font-size: 0.7rem; opacity: 0.6;">High-performance React & AI apps.</p></div>
-            </div>
-            <div class="service-link">
-                <i class="fas fa-vault" style="color: var(--primary);"></i>
-                <div><h4 id="v2">FinTech Portals</h4><p style="font-size: 0.7rem; opacity: 0.6;">Secure investment & crypto systems.</p></div>
-            </div>
-            <div class="service-link">
-                <i class="fas fa-bullseye" style="color: var(--primary);"></i>
-                <div><h4 id="v3">Global Brand SEO</h4><p style="font-size: 0.7rem; opacity: 0.6;">Dominating Google worldwide.</p></div>
+            <div class="card">
+                <h3 id="a-h"><i class="fas fa-rocket"></i> Agency Mission</h3>
+                <p id="a-p" style="font-size: 0.8rem; opacity: 0.6; margin-top: 10px; line-height: 1.6;">Hum dunya ki top 1 agency banne ke liye commit hain, har project ko international standards ke mutabiq build karte hain.</p>
+                <button class="btn-global" onclick="navTo('contact')">Let's Talk Business</button>
             </div>
         </div>
 
-        <div class="card" data-aos="fade-up">
-            <h3 id="cont-h">Launch a Project</h3>
-            <p id="cont-p" style="font-size: 0.7rem; opacity: 0.5; margin-bottom: 20px;">Direct bridge to Prime Solutions CEO</p>
-            <input type="text" id="clientName" placeholder="Full Name" style="width: 100%; padding: 18px; border-radius: 20px; background: rgba(0,0,0,0.3); border: 1px solid var(--border); color: white; margin-bottom: 12px; outline: none;">
-            <textarea id="projectDetails" rows="3" placeholder="Describe your vision..." style="width: 100%; padding: 18px; border-radius: 20px; background: rgba(0,0,0,0.3); border: 1px solid var(--border); color: white; margin-bottom: 15px; outline: none;"></textarea>
-            <button class="prime-btn" onclick="sendToCEO()">
-                <i class="fab fa-whatsapp"></i> <span id="btn-t">START CONVERSATION</span>
-            </button>
+        <div id="p-services" class="page-content">
+            <h3 style="margin-bottom: 20px;"><i class="fas fa-layer-group"></i> World-Class Services</h3>
+            <div class="card">
+                <h4>FinTech & Investment</h4>
+                <p style="font-size: 0.75rem; opacity: 0.6;">Secure financial ecosystems with real-time profit tracking.</p>
+            </div>
+            <div class="card">
+                <h4>Enterprise E-Commerce</h4>
+                <p style="font-size: 0.75rem; opacity: 0.6;">Multi-vendor stores with global payment integration.</p>
+            </div>
+            <div class="card">
+                <h4>AI-Driven Development</h4>
+                <p style="font-size: 0.75rem; opacity: 0.6;">Smart applications with automated logic and high speed.</p>
+            </div>
         </div>
 
-        <footer style="text-align: center; margin-top: 40px; opacity: 0.3; font-size: 0.7rem; letter-spacing: 1px;">
-            PRIME SOLUTIONS GLOBAL HUB © 2026<br>
-            Coded for Excellence by Nazim
+        <div id="p-contact" class="page-content">
+            <div class="card">
+                <h3 id="c-h">Direct CEO Inquiry</h3>
+                <p id="c-p" style="font-size: 0.7rem; opacity: 0.5; margin-bottom: 20px;">Your data is secured with professional NDA.</p>
+                <input type="text" id="cName" placeholder="Full Name" style="width: 100%; padding: 18px; border-radius: 20px; background: rgba(0,0,0,0.3); border: 1px solid var(--border); color: white; margin-bottom: 12px; outline: none;">
+                <textarea id="cMsg" rows="3" placeholder="Describe your project vision..." style="width: 100%; padding: 18px; border-radius: 20px; background: rgba(0,0,0,0.3); border: 1px solid var(--border); color: white; margin-bottom: 15px; outline: none;"></textarea>
+                <button class="btn-global" onclick="sendInquiry()">
+                    <i class="fab fa-whatsapp"></i> START PROJECT NOW
+                </button>
+            </div>
+        </div>
+
+        <footer style="text-align: center; opacity: 0.3; font-size: 0.7rem;">
+            WORLD'S TOP RATED AGENCY | PRIME SOLUTIONS © 2026
         </footer>
     </div>
 
-    <nav class="nav-dock">
-        <div class="nav-item active" onclick="navigate('home')"><i class="fas fa-home-alt"></i></div>
-        <div class="nav-item" onclick="navigate('services')"><i class="fas fa-shapes"></i></div>
-        <div class="nav-item" onclick="navigate('contact')"><i class="fas fa-envelope-open-text"></i></div>
-        <a href="tel:03705519562" class="nav-item" style="text-decoration:none;"><i class="fas fa-phone-alt"></i></a>
+    <nav class="dock">
+        <div class="dock-item active" onclick="navTo('home')"><i class="fas fa-house"></i></div>
+        <div class="dock-item" onclick="navTo('services')"><i class="fas fa-shapes"></i></div>
+        <div class="dock-item" onclick="navTo('contact')"><i class="fas fa-paper-plane"></i></div>
+        <a href="tel:03705519562" class="dock-item" style="text-decoration:none;"><i class="fas fa-phone"></i></a>
     </nav>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({ duration: 1000, once: true });
-        let lang = 'en';
+        AOS.init({ duration: 1000 });
+        let currentLang = 'en';
+
+        function navTo(page) {
+            document.querySelectorAll('.page-content').forEach(p => p.classList.remove('active'));
+            document.getElementById('p-'+page).classList.add('active');
+            document.querySelectorAll('.dock-item').forEach(i => i.classList.remove('active'));
+            event.currentTarget.classList.add('active');
+            window.scrollTo(0,0);
+        }
 
         function toggleLang() {
-            const btn = document.getElementById('langBtn');
-            if(lang === 'en') {
-                setLang('ur');
+            const btn = document.getElementById('lBtn');
+            if(currentLang === 'en') {
+                updateText('ur');
                 btn.innerText = 'ENGLISH';
-                lang = 'ur';
+                currentLang = 'ur';
             } else {
-                setLang('en');
+                updateText('en');
                 btn.innerText = 'URDU';
-                lang = 'en';
+                currentLang = 'en';
             }
         }
 
-        function setLang(l) {
-            const t = {
-                en: { name:"Muhammad Nazim", tag:"Architect of Digital Ecosystems | CEO", s1:"Projects", s2:"Global Clients", s3:"Rating ★", v1:"Next-Gen Web Apps", v2:"FinTech Portals", v3:"Global Brand SEO", ch:"Launch a Project", cp:"Direct bridge to Prime Solutions CEO", bt:"START CONVERSATION" },
-                ur: { name:"محمد ناظم", tag:"ڈیجیٹل ایکو سسٹم کے معمار | سی ای او", s1:"پراجیکٹس", s2:"عالمی کلائنٹس", s3:"درجہ بندی ★", v1:"جدید ویب ایپس", v2:"فنانشل پورٹلز", v3:"گلوبل برانڈ ایس ای او", ch:"پراجیکٹ شروع کریں", cp:"پرائم سلوشنز سی ای او سے براہ راست رابطہ", bt:"بات چیت شروع کریں" }
+        function updateText(l) {
+            const data = {
+                en: { n:"Muhammad Nazim", t:"Founder & Global CEO | Prime Solutions", s1:"Success Projects", s2:"Global Partners", s3:"Client Rating", ah:"Agency Mission", ap:"We are committed to being the world's top 1 agency, building every project to international standards.", ch:"Direct CEO Inquiry", cp:"Your data is secured with professional NDA." },
+                ur: { n:"محمد ناظم", t:"بانی اور عالمی سی ای او | پرائم سلوشنز", s1:"کامیاب پراجیکٹس", s2:"عالمی شراکت دار", s3:"کلائنٹ ریٹنگ", ah:"ایجنسی کا مشن", ap:"ہم دنیا کی ٹاپ 1 ایجنسی بننے کے لیے پرعزم ہیں، ہر پراجیکٹ کو بین الاقوامی معیار کے مطابق بناتے ہیں۔", ch:"براہ راست سی ای او انکوائری", cp:"آپ کا ڈیٹا پروفیشنل NDA کے ساتھ محفوظ ہے۔" }
             };
-            const cur = t[l];
-            document.getElementById('m-name').innerText = cur.name;
-            document.getElementById('m-tag').innerText = cur.tag;
-            document.getElementById('s1').innerText = cur.s1;
-            document.getElementById('s2').innerText = cur.s2;
-            document.getElementById('s3').innerText = cur.s3;
-            document.getElementById('v1').innerText = cur.v1;
-            document.getElementById('v2').innerText = cur.v2;
-            document.getElementById('v3').innerText = cur.v3;
-            document.getElementById('cont-h').innerText = cur.ch;
-            document.getElementById('cont-p').innerText = cur.cp;
-            document.getElementById('btn-t').innerText = cur.bt;
+            const d = data[l];
+            document.getElementById('n-txt').innerText = d.n;
+            document.getElementById('t-txt').innerText = d.t;
+            document.getElementById('s1').innerText = d.s1;
+            document.getElementById('s2').innerText = d.s2;
+            document.getElementById('s3').innerText = d.s3;
+            document.getElementById('a-h').innerText = d.ah;
+            document.getElementById('a-p').innerText = d.ap;
+            document.getElementById('c-h').innerText = d.ch;
+            document.getElementById('c-p').innerText = d.cp;
         }
 
-        function sendToCEO() {
-            const name = document.getElementById('clientName').value;
-            const details = document.getElementById('projectDetails').value;
-            const text = `Hello CEO Nazim! My name is ${name}. I have a vision: ${details}`;
-            window.location.href = `https://wa.me/923332637235?text=${encodeURIComponent(text)}`;
+        function sendInquiry() {
+            const n = document.getElementById('cName').value;
+            const m = document.getElementById('cMsg').value;
+            window.location.href = `https://wa.me/923332637235?text=Hello CEO Nazim! I am ${n}. Vision: ${m}`;
         }
     </script>
 </body>
