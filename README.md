@@ -2,7 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Muhammad Nazim | Global Prime Solutions Official</title>
+    <title>Muhammad Nazim | Global Prime Solutions 2026</title>
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
@@ -13,222 +13,144 @@
             --primary: #00f2fe; --secondary: #4facfe; --accent: #f093fb;
             --bg: #010204; --glass: rgba(255, 255, 255, 0.05); --border: rgba(255, 255, 255, 0.1);
         }
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Outfit', sans-serif; scroll-behavior: smooth; }
-        body { background-color: var(--bg); color: white; overflow-x: hidden; line-height: 1.6; }
-
-        #bg-video { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -2; object-fit: cover; filter: brightness(0.15); }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Outfit', sans-serif; }
+        body { background-color: var(--bg); color: white; overflow-x: hidden; }
 
         .container { width: 100%; max-width: 500px; margin: 0 auto; padding: 20px 15px 120px; }
 
-        /* Multi-Page Navigation Hub */
-        .page-card { display: none; background: var(--glass); backdrop-filter: blur(25px); border: 1px solid var(--border); border-radius: 35px; padding: 28px; margin-bottom: 22px; animation: slideUp 0.6s ease; }
-        .page-card.active { display: block; }
-        @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        /* Floating AI Assistant Mockup */
+        .ai-assistant { position: fixed; bottom: 100px; right: 20px; background: var(--primary); color: #000; padding: 10px 15px; border-radius: 20px 20px 0 20px; font-size: 0.7rem; font-weight: 800; z-index: 5000; box-shadow: 0 5px 15px rgba(0,242,254,0.4); animation: bounce 2s infinite; }
+        @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
 
-        /* Profile & Branding */
-        .profile-pic { width: 130px; height: 130px; border-radius: 50%; border: 3px solid var(--primary); padding: 5px; margin-bottom: 15px; box-shadow: 0 0 20px rgba(0, 242, 254, 0.3); }
-        .gradient-text { background: linear-gradient(45deg, var(--primary), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 800; font-size: 2.3rem; }
+        /* Page Layouts */
+        .page-section { display: none; animation: fadeIn 0.5s ease; }
+        .page-section.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
 
-        /* Stats & Trust Elements */
-        .stats-grid { display: flex; justify-content: space-around; text-align: center; margin-top: 25px; }
-        .stat-item h2 { color: var(--primary); font-size: 1.6rem; font-weight: 800; }
-        .stat-item p { font-size: 0.6rem; opacity: 0.6; text-transform: uppercase; letter-spacing: 1px; }
+        .card { background: var(--glass); backdrop-filter: blur(25px); border: 1px solid var(--border); border-radius: 35px; padding: 25px; margin-bottom: 20px; position: relative; overflow: hidden; }
 
-        /* Language & UI Controls */
-        .lang-toggle { position: fixed; top: 20px; right: 20px; z-index: 5000; background: var(--primary); color: #000; padding: 8px 15px; border-radius: 50px; font-weight: 800; font-size: 0.7rem; cursor: pointer; border: none; box-shadow: 0 5px 15px rgba(0, 242, 254, 0.3); }
+        /* Global Stats Bar */
+        .global-bar { display: flex; justify-content: space-between; margin-bottom: 25px; padding: 10px; border-radius: 50px; background: rgba(255,255,255,0.02); border: 1px solid var(--border); }
+        .g-stat { font-size: 0.6rem; opacity: 0.6; font-weight: 800; }
 
-        /* Process Steps */
-        .step-box { display: flex; align-items: center; gap: 15px; margin-bottom: 15px; background: rgba(255,255,255,0.03); padding: 15px; border-radius: 20px; border: 1px solid var(--border); }
-        .step-id { background: var(--primary); color: #000; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.9rem; }
+        /* Portfolio Grid */
+        .project-card { background: rgba(0,0,0,0.3); border-radius: 20px; padding: 15px; border: 1px solid var(--border); margin-bottom: 15px; }
+        .tag { display: inline-block; padding: 4px 10px; border-radius: 50px; font-size: 0.5rem; background: var(--primary); color: #000; margin-bottom: 10px; font-weight: 800; }
 
-        /* Service Cards */
-        .service-item { border-left: 3px solid var(--primary); padding-left: 15px; margin-bottom: 20px; }
-        .service-item h4 { color: var(--primary); margin-bottom: 5px; }
-
-        /* Contact & Buttons */
-        .btn-action { background: linear-gradient(45deg, #25d366, #128c7e); color: white; padding: 18px; width: 100%; border-radius: 22px; font-weight: 800; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 20px; border: none; font-size: 1rem; cursor: pointer; }
-
-        /* Footer Bottom Bar */
-        .bottom-nav { position: fixed; bottom: 25px; left: 50%; transform: translateX(-50%); width: 85%; max-width: 380px; background: rgba(10, 10, 10, 0.9); backdrop-filter: blur(20px); border-radius: 50px; border: 1px solid var(--border); display: flex; justify-content: space-around; padding: 16px; z-index: 4000; box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
-        .nav-link { color: white; font-size: 1.4rem; opacity: 0.5; cursor: pointer; transition: 0.3s; }
-        .nav-link.active { color: var(--primary); opacity: 1; transform: scale(1.2); }
+        /* Custom UI Buttons */
+        .btn-glow { background: linear-gradient(45deg, var(--primary), var(--secondary)); color: #000; padding: 18px; width: 100%; border-radius: 22px; font-weight: 800; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px; }
+        
+        /* Bottom Sticky Nav */
+        .tab-bar { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); width: 90%; max-width: 400px; background: rgba(10,10,10,0.9); backdrop-filter: blur(20px); border-radius: 50px; border: 1px solid var(--border); display: flex; justify-content: space-around; padding: 15px; z-index: 4000; }
+        .tab-icon { color: white; opacity: 0.4; font-size: 1.2rem; cursor: pointer; }
+        .tab-icon.active { color: var(--primary); opacity: 1; }
     </style>
 </head>
 <body>
 
-    <video autoplay muted loop playsinline id="bg-video">
-        <source src="https://assets.mixkit.co/videos/preview/mixkit-abstract-technology-connection-lines-render-animation-2807-large.mp4" type="video/mp4">
-    </video>
-
-    <button class="lang-toggle" onclick="toggleLanguage()" id="langBtn">URDU MODE</button>
+    <div class="ai-assistant" id="aiBubble">Hi! I'm Nazim's AI. Need a website?</div>
 
     <div class="container">
         
-        <section id="home" class="page-card active">
-            <div style="text-align: center;">
-                <img src="Screenshot_2026-04-12-10-02-54-39.png" alt="Nazim" class="profile-pic">
-                <h1 class="gradient-text" id="userName">Muhammad Nazim</h1>
-                <p id="userTag" style="opacity: 0.8; font-weight: 300;">Digital Architect | CEO Prime Solutions</p>
+        <div class="global-bar">
+            <span class="g-stat"><i class="fas fa-globe"></i> GLOBAL STATUS: ACTIVE</span>
+            <span class="g-stat"><i class="fas fa-clock"></i> RESPONSE: 30 MINS</span>
+        </div>
+
+        <section id="home" class="page-section active">
+            <div class="card" style="text-align: center;">
+                <img src="Screenshot_2026-04-12-10-02-54-39.png" style="width: 110px; height: 110px; border-radius: 50%; border: 3px solid var(--primary); margin-bottom: 15px;">
+                <h1 style="font-size: 2.2rem; font-weight: 800; background: linear-gradient(45deg, var(--primary), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Muhammad Nazim</h1>
+                <p style="opacity: 0.7; font-size: 0.9rem;">Expert Full-Stack Developer & Founder</p>
                 
-                <div class="stats-grid">
-                    <div class="stat-item"><h2>150+</h2><p id="stat1">Projects Done</p></div>
-                    <div class="stat-item"><h2>50+</h2><p id="stat2">Global Clients</p></div>
-                    <div class="stat-item"><h2>5.0</h2><p id="stat3">Rating ★</p></div>
+                <div style="display: flex; justify-content: center; gap: 20px; margin-top: 20px;">
+                    <div><h3 style="color: var(--primary);">150+</h3><p style="font-size: 0.5rem; opacity: 0.5;">LIVE PROJECTS</p></div>
+                    <div><h3 style="color: var(--primary);">50+</h3><p style="font-size: 0.5rem; opacity: 0.5;">CLIENTS</p></div>
+                    <div><h3 style="color: var(--primary);">100%</h3><p style="font-size: 0.5rem; opacity: 0.5;">SUCCESS</p></div>
                 </div>
             </div>
-            <button class="btn-action" style="margin-top: 30px; background: linear-gradient(45deg, var(--primary), var(--secondary)); color: #000;" onclick="switchPage('services')">
-                <i class="fas fa-arrow-right"></i> <span id="startBtn">Explore My Agency</span>
-            </button>
-        </section>
 
-        <section id="services" class="page-card">
-            <h3 id="servTitle"><i class="fas fa-rocket" style="color: var(--primary);"></i> Global Services</h3>
-            <p id="servSub" style="font-size: 0.75rem; opacity: 0.5; margin-bottom: 20px;">International Standard Business Solutions</p>
-            
-            <div class="service-item">
-                <h4 id="s1t">Full-Stack Development</h4>
-                <p id="s1d" style="font-size: 0.8rem; opacity: 0.7;">Modern websites using React, HTML, and high-security Firebase backends.</p>
-            </div>
-            <div class="service-item">
-                <h4 id="s2t">Investment & Finance Portals</h4>
-                <p id="s2d" style="font-size: 0.8rem; opacity: 0.7;">Professional investment systems with deposit/withdraw logs and profit tracking.</p>
-            </div>
-            <div class="service-item">
-                <h4 id="s3t">Global SEO Mastery</h4>
-                <p id="s3d" style="font-size: 0.8rem; opacity: 0.7;">Ranking your business on the first page of Google internationally.</p>
-            </div>
-            <div class="service-item">
-                <h4 id="s4t">Branding & UI/UX</h4>
-                <p id="s4d" style="font-size: 0.8rem; opacity: 0.7;">Creative designs that turn visitors into long-term loyal customers.</p>
+            <div class="card">
+                <h3><i class="fas fa-microchip"></i> Prime Tech Stack</h3>
+                <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 15px;">
+                    <span style="background: rgba(255,255,255,0.05); padding: 5px 12px; border-radius: 50px; font-size: 0.7rem; border: 1px solid var(--border);">React.js</span>
+                    <span style="background: rgba(255,255,255,0.05); padding: 5px 12px; border-radius: 50px; font-size: 0.7rem; border: 1px solid var(--border);">Firebase</span>
+                    <span style="background: rgba(255,255,255,0.05); padding: 5px 12px; border-radius: 50px; font-size: 0.7rem; border: 1px solid var(--border);">Node.js</span>
+                    <span style="background: rgba(255,255,255,0.05); padding: 5px 12px; border-radius: 50px; font-size: 0.7rem; border: 1px solid var(--border);">Python</span>
+                </div>
             </div>
         </section>
 
-        <section id="process" class="page-card">
-            <h3 id="procTitle" style="margin-bottom: 20px;"><i class="fas fa-stream"></i> Working Process</h3>
-            <div class="step-box"><div class="step-id">1</div><p id="p1" style="font-size: 0.8rem;"><b>Discovery:</b> Understanding your business goals perfectly.</p></div>
-            <div class="step-box"><div class="step-id">2</div><p id="p2" style="font-size: 0.8rem;"><b>Design:</b> Creating unique UI/UX mobile-first prototypes.</p></div>
-            <div class="step-box"><div class="step-id">3</div><p id="p3" style="font-size: 0.8rem;"><b>Develop:</b> Writing clean, fast, and SEO-optimized code.</p></div>
-            <div class="step-box"><div class="step-id">4</div><p id="p4" style="font-size: 0.8rem;"><b>Launch:</b> Final testing and professional live deployment.</p></div>
+        <section id="portfolio" class="page-section">
+            <h3 style="margin-bottom: 20px;"><i class="fas fa-briefcase"></i> Master Portfolio</h3>
+            <div class="project-card">
+                <span class="tag">INVESTMENT PLATFORM</span>
+                <h4>PakGold Official Portal</h4>
+                <p style="font-size: 0.7rem; opacity: 0.6; margin-top: 5px;">Features: Live Profit Tracking, Auto-Deposit, Admin Dashboard.</p>
+                <button style="background: transparent; border: 1px solid var(--primary); color: var(--primary); padding: 5px 15px; border-radius: 50px; margin-top: 10px; font-size: 0.6rem;">VIEW CASE STUDY</button>
+            </div>
+            <div class="project-card">
+                <span class="tag">ECOMMERCE</span>
+                <h4>Prime Mart Global</h4>
+                <p style="font-size: 0.7rem; opacity: 0.6; margin-top: 5px;">Features: Multi-vendor, Secure Stripe Payment, Order Tracking.</p>
+                <button style="background: transparent; border: 1px solid var(--primary); color: var(--primary); padding: 5px 15px; border-radius: 50px; margin-top: 10px; font-size: 0.6rem;">VIEW CASE STUDY</button>
+            </div>
         </section>
 
-        <section id="contact" class="page-card">
-            <h3 id="contTitle">Contact Prime Solutions</h3>
-            <p id="contSub" style="font-size: 0.75rem; opacity: 0.6; margin-bottom: 20px;">Privacy & Trust Guaranteed | 24/7 Support</p>
-            
-            <div style="margin-top: 15px;">
-                <input type="text" id="clientName" placeholder="Your Name" style="width: 100%; padding: 15px; border-radius: 15px; background: rgba(255,255,255,0.05); border: 1px solid var(--border); color: white; margin-bottom: 12px;">
-                <textarea id="projectDesc" rows="3" placeholder="Tell us about your project" style="width: 100%; padding: 15px; border-radius: 15px; background: rgba(255,255,255,0.05); border: 1px solid var(--border); color: white; margin-bottom: 15px;"></textarea>
+        <section id="contact" class="page-section">
+            <div class="card">
+                <h3><i class="fas fa-envelope"></i> Hire Prime Solutions</h3>
+                <p style="font-size: 0.75rem; opacity: 0.5; margin-bottom: 20px;">Direct access to Muhammad Nazim</p>
                 
-                <button class="btn-action" onclick="sendWhatsApp()">
-                    <i class="fab fa-whatsapp"></i> <span id="waBtn">Send to WhatsApp</span>
+                <input type="text" id="client" placeholder="Your Name" style="width: 100%; padding: 15px; border-radius: 15px; background: rgba(0,0,0,0.3); border: 1px solid var(--border); color: white; margin-bottom: 12px;">
+                <select id="service" style="width: 100%; padding: 15px; border-radius: 15px; background: rgba(0,0,0,0.3); border: 1px solid var(--border); color: white; margin-bottom: 12px;">
+                    <option>Investment Website</option>
+                    <option>E-Commerce Store</option>
+                    <option>Business Branding</option>
+                </select>
+                <button class="btn-glow" onclick="orderNow()">
+                    <i class="fab fa-whatsapp"></i> START PROJECT
                 </button>
-                <a href="tel:03705519562" class="btn-action" style="background: rgba(255,255,255,0.05); border: 1px solid var(--primary); color: var(--primary);">
-                    <i class="fas fa-phone-alt"></i> Call: 0370 5519562
-                </a>
             </div>
         </section>
 
-        <footer id="footerText">
-            © 2026 PRIME SOLUTIONS | EXCELLENCE IN EVERY CODE<br>
-            Trusted by 50+ Global Clients Internationally
+        <footer style="text-align: center; opacity: 0.3; font-size: 0.7rem; margin-top: 30px;">
+            VERIFIED PRIME SOLUTIONS HUB 2026<br>
+            PRIVACY SECURED | LIFETIME SUPPORT
         </footer>
+
     </div>
 
-    <nav class="bottom-nav">
-        <div class="nav-link active" onclick="switchPage('home')"><i class="fas fa-home"></i></div>
-        <div class="nav-link" onclick="switchPage('services')"><i class="fas fa-rocket"></i></div>
-        <div class="nav-link" onclick="switchPage('process')"><i class="fas fa-stream"></i></div>
-        <div class="nav-link" onclick="switchPage('contact')"><i class="fas fa-paper-plane"></i></div>
+    <nav class="tab-bar">
+        <div class="tab-icon active" onclick="navigate('home')"><i class="fas fa-th-large"></i></div>
+        <div class="tab-icon" onclick="navigate('portfolio')"><i class="fas fa-rocket"></i></div>
+        <div class="tab-icon" onclick="navigate('contact')"><i class="fas fa-comment-alt"></i></div>
+        <a href="tel:03705519562" class="tab-icon" style="text-decoration: none;"><i class="fas fa-phone"></i></a>
     </nav>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({ duration: 1000, once: true });
-        let lang = 'en';
-
-        function toggleLanguage() {
-            const btn = document.getElementById('langBtn');
-            if(lang === 'en') {
-                updateUI('ur');
-                btn.innerText = 'ENGLISH MODE';
-                lang = 'ur';
-            } else {
-                updateUI('en');
-                btn.innerText = 'URDU MODE';
-                lang = 'en';
-            }
-        }
-
-        function updateUI(l) {
-            const translations = {
-                en: {
-                    name: "Muhammad Nazim", tag: "Digital Architect | CEO Prime Solutions",
-                    s1: "Projects Done", s2: "Global Clients", s3: "Rating ★", start: "Explore My Agency",
-                    servT: "Global Services", servS: "International Standard Business Solutions",
-                    s1t: "Full-Stack Development", s1d: "Modern websites using React, HTML, and high-security Firebase backends.",
-                    s2t: "Investment & Finance Portals", s2d: "Professional investment systems with deposit/withdraw logs and profit tracking.",
-                    s3t: "Global SEO Mastery", s3d: "Ranking your business on the first page of Google internationally.",
-                    s4t: "Branding & UI/UX", s4d: "Creative designs that turn visitors into long-term loyal customers.",
-                    procT: "Working Process", p1: "Discovery: Understanding your business goals perfectly.",
-                    p2: "Design: Creating unique UI/UX mobile-first prototypes.",
-                    p3: "Develop: Writing clean, fast, and SEO-optimized code.",
-                    p4: "Launch: Final testing and professional live deployment.",
-                    contT: "Contact Prime Solutions", contS: "Privacy & Trust Guaranteed | 24/7 Support",
-                    wa: "Send to WhatsApp", foot: "© 2026 PRIME SOLUTIONS | EXCELLENCE IN EVERY CODE"
-                },
-                ur: {
-                    name: "محمد ناظم", tag: "ڈیجیٹل آرکیٹیکٹ | سی ای او پرائم سلوشنز",
-                    s1: "مکمل پراجیکٹس", s2: "عالمی کلائنٹس", s3: "درجہ بندی ★", start: "ایجنسی کا دورہ کریں",
-                    servT: "عالمی سروسز", servS: "بین الاقوامی معیار کے بزنس سلوشنز",
-                    s1t: "فل اسٹیک ڈویلپمنٹ", s1d: "React اور Firebase کے ساتھ جدید اور محفوظ ویب سائٹس۔",
-                    s2t: "انویسٹمنٹ پورٹلز", s2d: "منافع اور ڈیپازٹ ٹریکنگ کے ساتھ پروفیشنل انویسٹمنٹ سسٹمز۔",
-                    s3t: "عالمی ایس ای او", s3d: "گوگل کے پہلے پیج پر آپ کے بزنس کی عالمی رینکنگ۔",
-                    s4t: "برانڈنگ اور ڈیزائن", s4d: "ایسے ڈیزائن جو کلائنٹس کو آپ کا دیوانہ بنا دیں۔",
-                    procT: "کام کرنے کا طریقہ", p1: "تحقیق: آپ کے بزنس کے مقاصد کو مکمل سمجھنا۔",
-                    p2: "ڈیزائن: موبائل کے لیے بہترین اور منفرد ڈیزائن بنانا۔",
-                    p3: "کوڈنگ: تیز رفتار اور سرچ انجن کے لیے بہترین کوڈنگ۔",
-                    p4: "لانچ: فائنل ٹیسٹنگ اور ویب سائٹ لائیو کرنا۔",
-                    contT: "رابطہ کریں", contS: "پرائیویسی اور اعتماد کی مکمل ضمانت",
-                    wa: "واٹس ایپ پر بھیجیں", foot: "© 2026 پرائم سلوشنز | ہر کوڈ میں مہارت"
-                }
-            };
-            const t = translations[l];
-            document.getElementById('userName').innerText = t.name;
-            document.getElementById('userTag').innerText = t.tag;
-            document.getElementById('stat1').innerText = t.s1;
-            document.getElementById('stat2').innerText = t.s2;
-            document.getElementById('stat3').innerText = t.s3;
-            document.getElementById('startBtn').innerText = t.start;
-            document.getElementById('servTitle').innerText = t.servT;
-            document.getElementById('servSub').innerText = t.servS;
-            document.getElementById('s1t').innerText = t.s1t; document.getElementById('s1d').innerText = t.s1d;
-            document.getElementById('s2t').innerText = t.s2t; document.getElementById('s2d').innerText = t.s2d;
-            document.getElementById('s3t').innerText = t.s3t; document.getElementById('s3d').innerText = t.s3d;
-            document.getElementById('s4t').innerText = t.s4t; document.getElementById('s4d').innerText = t.s4d;
-            document.getElementById('procTitle').innerText = t.procT;
-            document.getElementById('p1').innerHTML = t.p1; document.getElementById('p2').innerHTML = t.p2;
-            document.getElementById('p3').innerHTML = t.p3; document.getElementById('p4').innerHTML = t.p4;
-            document.getElementById('contTitle').innerText = t.contT;
-            document.getElementById('contSub').innerText = t.contS;
-            document.getElementById('waBtn').innerText = t.wa;
-            document.getElementById('footerText').innerHTML = t.foot + "<br>Trusted by 50+ Global Clients Internationally";
-        }
-
-        function switchPage(pageId) {
-            document.querySelectorAll('.page-card').forEach(p => p.classList.remove('active'));
-            document.getElementById(pageId).classList.add('active');
-            document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
-            const navIcons = { home:0, services:1, process:2, contact:3 };
-            document.querySelectorAll('.nav-link')[navIcons[pageId]].classList.add('active');
+        function navigate(id) {
+            document.querySelectorAll('.page-section').forEach(p => p.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+            document.querySelectorAll('.tab-icon').forEach(t => t.classList.remove('active'));
+            event.currentTarget.classList.add('active');
             window.scrollTo(0,0);
         }
 
-        function sendWhatsApp() {
-            const name = document.getElementById('clientName').value;
-            const desc = document.getElementById('projectDesc').value;
-            const text = `Hello Nazim! My name is ${name}. Project Inquiry: ${desc}`;
+        function orderNow() {
+            const name = document.getElementById('client').value;
+            const type = document.getElementById('service').value;
+            const text = `Hello Nazim! My name is ${name}. I want to discuss an ${type}.`;
             window.location.href = `https://wa.me/923332637235?text=${encodeURIComponent(text)}`;
         }
+
+        // AI Bubble Animation
+        const messages = ["Need a Pro Website?", "I'm Online Now!", "Check my Work!", "Free Quote?"];
+        let i = 0;
+        setInterval(() => {
+            document.getElementById('aiBubble').innerText = messages[i];
+            i = (i + 1) % messages.length;
+        }, 4000);
     </script>
 </body>
 </html>
