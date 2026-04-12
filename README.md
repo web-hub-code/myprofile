@@ -74,7 +74,7 @@
 
     <div class="container">
         <section class="card hero" data-aos="zoom-in">
-            <img src="Snapchat-2096615446.jpg" alt="Muhammad Nazim" class="profile-pic">
+            <img src="IMG_20260412_085826.jpg" alt="Muhammad Nazim" class="profile-pic">
             <h1 class="gradient-text">Muhammad Nazim</h1>
             <p style="opacity: 0.8; font-weight: 300;">Digital Architect | CEO Prime Solutions</p>
             <div class="stats-grid" style="margin-top: 25px;">
