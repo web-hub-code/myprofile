@@ -13,136 +13,156 @@
             --primary: #00f2fe; --secondary: #4facfe; --accent: #f093fb;
             --bg: #010204; --glass: rgba(255, 255, 255, 0.03); --border: rgba(255, 255, 255, 0.08);
         }
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Outfit', sans-serif; cursor: none; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Outfit', sans-serif; }
         body { background-color: var(--bg); color: white; overflow-x: hidden; scroll-behavior: smooth; }
 
+        /* Progress Bar */
+        #progress-bar { position: fixed; top: 0; left: 0; width: 0%; height: 4px; background: linear-gradient(to right, var(--primary), var(--accent)); z-index: 9999; }
+
         #bg-video { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -2; object-fit: cover; filter: brightness(0.1); }
-        
-        /* Custom Cursor */
-        .cursor { width: 20px; height: 20px; border: 2px solid var(--primary); border-radius: 50%; position: fixed; pointer-events: none; z-index: 9999; transition: transform 0.1s; transform: translate(-50%, -50%); box-shadow: 0 0 15px var(--primary); }
+        .overlay-mesh { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-image: radial-gradient(var(--primary) 0.5px, transparent 0.5px); background-size: 30px 30px; opacity: 0.1; z-index: -1; }
 
-        .container { width: 100%; max-width: 480px; margin: 0 auto; padding: 20px 15px 150px; }
+        .container { width: 100%; max-width: 480px; margin: 0 auto; padding: 40px 15px 120px; }
 
-        /* Fake Live Notification */
-        .notification { position: fixed; bottom: 120px; left: 20px; background: rgba(255,255,255,0.1); backdrop-filter: blur(15px); padding: 10px 20px; border-radius: 20px; border: 1px solid var(--primary); font-size: 0.7rem; display: flex; align-items: center; gap: 10px; z-index: 1000; transform: translateX(-150%); transition: 0.5s; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
-        .notification.active { transform: translateX(0); }
-
-        /* Premium Hero */
+        /* Premium Glass Card */
         .card { 
             background: var(--glass); backdrop-filter: blur(30px); -webkit-backdrop-filter: blur(30px);
             border: 1px solid var(--border); border-radius: 40px; 
-            padding: 30px; margin-bottom: 25px; transition: 0.5s;
+            padding: 35px; margin-bottom: 30px; transition: 0.5s cubic-bezier(0.2, 1, 0.3, 1);
+            position: relative; overflow: hidden;
         }
+        .card:hover { transform: translateY(-10px); border-color: var(--primary); box-shadow: 0 20px 50px rgba(0, 242, 254, 0.15); }
+
+        /* Hero Styling */
         .hero { text-align: center; }
-        .profile-pic { width: 150px; height: 150px; border-radius: 50%; border: 2px solid var(--primary); padding: 6px; box-shadow: 0 0 40px rgba(0, 242, 254, 0.3); }
-        
-        .gradient-text { background: linear-gradient(45deg, var(--primary), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 800; font-size: 2.5rem; }
+        .profile-container { position: relative; width: 160px; height: 160px; margin: 0 auto 25px; }
+        .profile-pic { width: 100%; height: 100%; border-radius: 50%; border: 2px solid var(--primary); padding: 8px; object-fit: cover; }
+        .status-badge { position: absolute; bottom: 12px; right: 12px; width: 22px; height: 22px; background: #25d366; border: 4px solid var(--bg); border-radius: 50%; box-shadow: 0 0 15px #25d366; }
 
-        /* Trust Badges */
-        .trust-icons { display: flex; justify-content: center; gap: 20px; margin-top: 20px; opacity: 0.5; font-size: 1.2rem; }
+        .gradient-text { background: linear-gradient(45deg, var(--primary), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 800; font-size: 2.6rem; letter-spacing: -1px; }
 
-        /* Floating WA */
-        .wa-float { position: fixed; bottom: 30px; right: 20px; background: #25d366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 32px; z-index: 1001; animation: pulse 2s infinite; text-decoration: none; cursor: pointer; }
-        @keyframes pulse { 0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); } 70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); } 100% { transform: scale(1); } }
+        /* Form Controls */
+        .input-group { margin-bottom: 15px; }
+        .form-control { width: 100%; padding: 18px; border-radius: 20px; border: 1px solid var(--border); background: rgba(255,255,255,0.02); color: white; outline: none; transition: 0.3s; }
+        .form-control:focus { border-color: var(--primary); background: rgba(255,255,255,0.05); }
 
-        /* Nav Bar */
-        .nav-bar { position: fixed; bottom: 30px; left: 20px; width: calc(100% - 110px); max-width: 320px; background: rgba(255,255,255,0.05); backdrop-filter: blur(20px); border-radius: 50px; border: 1px solid var(--border); display: flex; justify-content: space-around; padding: 15px; z-index: 1000; }
-        .nav-link { color: white; font-size: 1.4rem; opacity: 0.6; transition: 0.3s; cursor: pointer; }
-        .nav-link:hover { color: var(--primary); opacity: 1; transform: scale(1.2); }
+        /* Navigation */
+        .nav-bar { position: fixed; bottom: 25px; left: 50%; transform: translateX(-50%); width: 90%; max-width: 420px; background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(25px); border-radius: 50px; border: 1px solid var(--border); display: flex; justify-content: space-around; padding: 18px; z-index: 1000; }
+        .nav-link { color: rgba(255,255,255,0.6); font-size: 1.5rem; transition: 0.4s; }
+        .nav-link:hover { color: var(--primary); transform: scale(1.3); }
 
-        .btn-hire { background: linear-gradient(45deg, var(--primary), var(--secondary)); color: #000; padding: 20px; width: 100%; border-radius: 25px; font-weight: 800; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 10px; border: none; font-size: 1.1rem; cursor: pointer; margin-top: 20px; }
+        /* Main CTA Button */
+        .btn-premium { background: linear-gradient(45deg, var(--primary), var(--secondary)); color: #000; padding: 20px; width: 100%; border-radius: 25px; font-weight: 800; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 12px; border: none; font-size: 1.1rem; cursor: pointer; }
+
+        .wa-float { position: fixed; bottom: 100px; right: 25px; background: #25d366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 32px; z-index: 1001; box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3); animation: float 3s ease-in-out infinite; }
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
     </style>
 </head>
 <body>
 
-    <div class="cursor" id="cursor"></div>
+    <div id="progress-bar"></div>
     <video autoplay muted loop playsinline id="bg-video">
         <source src="https://assets.mixkit.co/videos/preview/mixkit-abstract-technology-connection-lines-render-animation-2807-large.mp4" type="video/mp4">
     </video>
-
-    <div class="notification" id="notif">
-        <i class="fas fa-shopping-cart" style="color: var(--primary);"></i>
-        <span id="notif-text">New project started in Lahore!</span>
-    </div>
+    <div class="overlay-mesh"></div>
 
     <a href="https://wa.me/923332637235" class="wa-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
     <div class="container">
         <section class="card hero" data-aos="zoom-in">
-            <div style="background: rgba(0,242,254,0.1); color: var(--primary); display: inline-block; padding: 5px 15px; border-radius: 50px; font-size: 0.6rem; font-weight: 800; margin-bottom: 15px;">TOP RATED AGENCY 2026</div>
-            <img src="Screenshot_2026-04-12-10-02-54-39.png" alt="Nazim" class="profile-pic">
-            <h1 class="gradient-text">Muhammad Nazim</h1>
-            <p id="typewriter" style="font-size: 1.1rem; color: var(--primary); font-weight: 300;"></p>
-            
-            <div class="trust-icons">
-                <i class="fab fa-google"></i> <i class="fab fa-stripe"></i> <i class="fas fa-shield-alt"></i> <i class="fab fa-amazon"></i>
+            <div style="background: rgba(0,242,254,0.1); color: var(--primary); display: inline-block; padding: 6px 18px; border-radius: 50px; font-size: 0.65rem; font-weight: 800; margin-bottom: 20px; letter-spacing: 1px;">VERIFIED PRIME AGENCY</div>
+            <div class="profile-container">
+                <img src="Screenshot_2026-04-12-10-02-54-39.png" alt="Muhammad Nazim" class="profile-pic">
+                <div class="status-badge"></div>
             </div>
+            <h1 class="gradient-text">Muhammad Nazim</h1>
+            <p id="typewriter" style="font-size: 1.1rem; min-height: 25px; margin-top: 10px; opacity: 0.8; font-weight: 300;"></p>
         </section>
 
-        <div class="card" data-aos="fade-up">
-            <h3 style="margin-bottom: 20px;">Elite Solutions</h3>
-            <div style="display: grid; gap: 15px;">
-                <div style="background: rgba(255,255,255,0.02); padding: 15px; border-radius: 20px; border: 1px solid var(--border);">
-                    <i class="fas fa-check-circle" style="color: var(--primary);"></i> <b>Premium Branding:</b> Apple-style modern aesthetics.
+        <div class="card" data-aos="fade-up" style="display: flex; justify-content: space-around; text-align: center; padding: 25px;">
+            <div><h2 style="color: var(--primary);">50+</h2><p style="font-size: 0.6rem; opacity: 0.5;">PROJECTS</p></div>
+            <div><h2 style="color: var(--primary);">100%</h2><p style="font-size: 0.6rem; opacity: 0.5;">SECURITY</p></div>
+            <div><h2 style="color: var(--primary);">24/7</h2><p style="font-size: 0.6rem; opacity: 0.5;">SUPPORT</p></div>
+        </div>
+
+        <div class="card" data-aos="fade-up" id="contact">
+            <h3 style="margin-bottom: 25px; text-align: center; font-weight: 800;"><i class="fas fa-paper-plane" style="color: var(--primary);"></i> GET A QUOTE</h3>
+            <form id="mainInquiryForm">
+                <div class="input-group"><input type="text" id="name" class="form-control" placeholder="Aapka Naam" required></div>
+                <div class="input-group">
+                    <select id="service" class="form-control" style="background: #0a0a0a;" required>
+                        <option value="" disabled selected>Service Choose Karein</option>
+                        <option value="Web Development">Full Web Development</option>
+                        <option value="UI/UX Design">Elite UI/UX Design</option>
+                        <option value="SEO Ranking">SEO & Google Growth</option>
+                        <option value="Custom Plugin">Custom Plugin / App</option>
+                    </select>
                 </div>
-                <div style="background: rgba(255,255,255,0.02); padding: 15px; border-radius: 20px; border: 1px solid var(--border);">
-                    <i class="fas fa-check-circle" style="color: var(--primary);"></i> <b>Fast Delivery:</b> Projects ready within 48-72 hours.
-                </div>
+                <div class="input-group"><textarea id="details" class="form-control" placeholder="Project ki detail likhein..." rows="3" required></textarea></div>
+                <button type="submit" class="btn-premium">SUBMIT INQUIRY</button>
+            </form>
+        </div>
+
+        <div class="card" data-aos="fade-up" style="text-align: center; border-bottom: 5px solid var(--primary);">
+            <h4 style="margin-bottom: 15px; font-size: 0.9rem; opacity: 0.7;">TRUSTED BY GLOBAL PARTNERS</h4>
+            <div style="display: flex; justify-content: center; gap: 20px; font-size: 1.5rem; opacity: 0.4;">
+                <i class="fab fa-stripe"></i> <i class="fab fa-google"></i> <i class="fab fa-paypal"></i> <i class="fas fa-shield-alt"></i>
             </div>
         </div>
 
-        <div class="card" data-aos="fade-up" style="border-bottom: 5px solid var(--primary);">
-            <h3 style="text-align: center;"><i class="fas fa-user-lock"></i> 100% Trusted</h3>
-            <p style="text-align: center; font-size: 0.8rem; opacity: 0.6; margin-top: 10px;">End-to-end encryption for all client data. Money-back guarantee if not satisfied.</p>
-            <a href="https://wa.me/923332637235" class="btn-hire">START YOUR PROJECT</a>
-        </div>
-
-        <footer style="text-align: center; font-size: 0.7rem; opacity: 0.2;">PRIME SOLUTIONS | EXCELLENCE IN CODE</footer>
+        <footer style="text-align: center; font-size: 0.7rem; opacity: 0.3; margin-top: 20px;">
+            PRIME SOLUTIONS © 2026 | ALL RIGHTS RESERVED
+        </footer>
     </div>
 
     <nav class="nav-bar">
         <a href="#" class="nav-link"><i class="fas fa-home"></i></a>
         <a href="https://wa.me/923332637235" class="nav-link"><i class="fab fa-whatsapp"></i></a>
         <a href="https://www.facebook.com/profile.php?id=100084218946114" class="nav-link"><i class="fab fa-facebook-f"></i></a>
-        <a href="mailto:webhub262@gmail.com" class="nav-link"><i class="fas fa-envelope"></i></a>
+        <a href="mailto:webhub262@gmail.com" class="nav-link"><i class="fas fa-envelope-open"></i></a>
     </nav>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({ duration: 1000 });
+        AOS.init({ duration: 1200, once: true });
 
-        // Cursor Movement
-        const cursor = document.getElementById('cursor');
-        document.addEventListener('mousemove', e => {
-            cursor.style.left = e.clientX + 'px';
-            cursor.style.top = e.clientY + 'px';
-        });
+        // Scroll Progress
+        window.onscroll = function() {
+            let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            let scrolled = (winScroll / height) * 100;
+            document.getElementById("progress-bar").style.width = scrolled + "%";
+        };
 
-        // Typewriter
+        // Professional Typewriter
         const text = document.getElementById('typewriter');
-        const phrases = ["Founder Prime Solutions", "Digital Architect", "UI/UX Specialist"];
-        let i = 0, j = 0;
+        const phrases = ["Digital Architect", "Founder Prime Solutions", "Full-Stack Web Guru", "UI/UX Specialist"];
+        let i = 0, j = 0, isDeleting = false;
+
         function type() {
-            if (j < phrases[i].length) { text.innerHTML += phrases[i][j]; j++; setTimeout(type, 100); }
-            else { setTimeout(erase, 2000); }
-        }
-        function erase() {
-            if (j > 0) { text.innerHTML = phrases[i].substring(0, j-1); j--; setTimeout(erase, 50); }
-            else { i = (i + 1) % phrases.length; setTimeout(type, 500); }
+            const current = phrases[i];
+            if (isDeleting) {
+                text.innerHTML = current.substring(0, j - 1);
+                j--;
+            } else {
+                text.innerHTML = current.substring(0, j + 1);
+                j++;
+            }
+            if (!isDeleting && j === current.length) { isDeleting = true; setTimeout(type, 2000); }
+            else if (isDeleting && j === 0) { isDeleting = false; i = (i + 1) % phrases.length; setTimeout(type, 500); }
+            else { setTimeout(type, isDeleting ? 50 : 100); }
         }
         window.onload = type;
 
-        // Social Proof Notification Logic
-        const notif = document.getElementById('notif');
-        const notifText = document.getElementById('notif-text');
-        const cities = ["Karachi", "Lahore", "Dubai", "London", "New York"];
-        function showNotif() {
-            const city = cities[Math.floor(Math.random() * cities.length)];
-            notifText.innerText = `New order from ${city}!`;
-            notif.classList.add('active');
-            setTimeout(() => notif.classList.remove('active'), 4000);
-        }
-        setInterval(showNotif, 10000);
+        // Form Submission to WhatsApp
+        document.getElementById('mainInquiryForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const service = document.getElementById('service').value;
+            const details = document.getElementById('details').value;
+            const message = `*PRIME SOLUTIONS INQUIRY*%0A%0A*Name:* ${name}%0A*Service:* ${service}%0A*Details:* ${details}%0A%0A_Sent via Official Portfolio_`;
+            window.open(`https://wa.me/923332637235?text=${message}`, '_blank');
+        });
     </script>
 </body>
 </html>
