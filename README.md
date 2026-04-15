@@ -2,8 +2,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Prime Solutions | CEO Muhammad Nazim</title>
     
+    <title>Prime Solutions | Expert Web Development & IT Agency by M Nazim</title>
+    <meta name="description" content="Prime Solutions by Muhammad Nazim offers premium web architecture, AI-driven automation, and secure digital systems. Global IT enterprise agency providing high-end software solutions.">
+    <meta name="keywords" content="Prime Solutions, Muhammad Nazim, Web Developer Pakistan, Software Agency, AI Automation, IT Enterprise, Custom Web Architecture">
+    <meta name="author" content="Muhammad Nazim">
+    
+    <meta property="og:title" content="Prime Solutions | Digital Excellence by M Nazim">
+    <meta property="og:description" content="Bridging the gap between imagination and digital reality with high-end IT solutions.">
+    <meta property="og:url" content="https://web-hub-code.github.io/PRIMESOLUTIONS/">
+    <meta property="og:image" content="Screenshot_2026-04-12-10-02-54-39.png">
+    <meta property="og:type" content="website">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -26,9 +36,8 @@
         /* Mega Header */
         .agency-header { background: var(--glass); backdrop-filter: blur(40px); border: 1px solid var(--border); border-radius: 45px; padding: 40px 20px; text-align: center; margin-bottom: 25px; border-bottom: 5px solid var(--primary); }
         .pfp-ceo { width: 130px; height: 130px; border-radius: 50%; border: 3px solid var(--primary); padding: 5px; box-shadow: 0 0 30px rgba(0, 242, 254, 0.2); margin-bottom: 15px; object-fit: cover; }
-        .brand-name { font-size: 2.5rem; font-weight: 800; background: linear-gradient(45deg, var(--primary), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; letter-spacing: -1px; }
+        .brand-name { font-size: 2.5rem; font-weight: 800; background: linear-gradient(45deg, var(--primary), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; letter-spacing: -1px; margin-bottom: 5px; }
         
-        /* Social Icons */
         .social-row { display: flex; justify-content: center; gap: 20px; margin-top: 15px; }
         .social-link { color: white; font-size: 1.2rem; opacity: 0.5; transition: 0.3s; }
         .social-link:hover { opacity: 1; color: var(--primary); transform: translateY(-3px); }
@@ -50,7 +59,6 @@
         .btn-action { background: linear-gradient(45deg, var(--primary), var(--secondary)); color: #000; padding: 16px; border-radius: 18px; width: 100%; border: none; font-weight: 800; cursor: pointer; font-size: 0.9rem; text-decoration: none; display: flex; justify-content: center; align-items: center; gap: 10px; margin-top: 10px; transition: 0.3s; }
         .btn-action:hover { transform: scale(1.02); box-shadow: 0 5px 15px rgba(0,242,254,0.3); }
 
-        /* Contact Details */
         .contact-info { display: flex; align-items: center; gap: 15px; margin-bottom: 15px; background: rgba(255,255,255,0.02); padding: 15px; border-radius: 20px; border: 1px solid var(--border); }
         .contact-info i { color: var(--primary); font-size: 1.2rem; }
 
@@ -67,15 +75,15 @@
     <div class="container">
         
         <header class="agency-header" data-aos="zoom-in">
-            <img src="Screenshot_2026-04-12-10-02-54-39.png" class="pfp-ceo" alt="Muhammad Nazim">
-            <div class="brand-name">PRIME SOLUTIONS</div>
+            <img src="Screenshot_2026-04-12-10-02-54-39.png" class="pfp-ceo" alt="Muhammad Nazim - CEO of Prime Solutions">
+            <h1 class="brand-name">PRIME SOLUTIONS</h1>
             <p style="opacity: 0.5; font-size: 0.75rem; letter-spacing: 2px;">GLOBAL IT ENTERPRISE AGENCY</p>
             
             <div class="social-row">
-                <a href="https://www.facebook.com/profile.php?id=100084218946114" target="_blank" class="social-link"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://www.instagram.com/mr_nazim073?igsh=MXd4d2hmcWNvNjVsdQ==" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.linkedin.com/in/muhammad-nazim-7401b6310" target="_blank" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://youtube.com/@crazykhantv" target="_blank" class="social-link"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=100084218946114" target="_blank" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/mr_nazim073?igsh=MXd4d2hmcWNvNjVsdQ==" target="_blank" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/muhammad-nazim-7401b6310" target="_blank" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://youtube.com/@crazykhantv" target="_blank" class="social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
             </div>
         </header>
 
@@ -88,52 +96,44 @@
 
         <section id="pane-home" class="view-pane active">
             <div class="feature-card">
-                <h3 style="color:var(--primary); margin-bottom:10px;">Executive Vision</h3>
+                <h2 style="color:var(--primary); margin-bottom:10px; font-size: 1.5rem;">Executive Vision</h2>
                 <p style="font-size: 0.85rem; opacity: 0.6; line-height: 1.7;">
-                    Prime Solutions lead by Muhammad Nazim provides premium web architecture, AI-driven automation, and secure investment systems. We bridge the gap between imagination and digital reality.
+                    Prime Solutions, led by Muhammad Nazim, provides premium web architecture, AI-driven automation, and secure investment systems. We bridge the gap between imagination and digital reality.
                 </p>
                 <a href="https://wa.me/923332637235" class="btn-action">Direct WhatsApp <i class="fab fa-whatsapp"></i></a>
             </div>
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
-                <div class="feature-card" style="text-align:center; padding:15px;"><h2>50+</h2><p style="font-size:0.5rem; opacity:0.5;">LIVE APPS</p></div>
+                <div class="feature-card" style="text-align:center; padding:15px;"><h2>50+</h2><p style="font-size:0.5rem; opacity:0.5;">LIVE PROJECTS</p></div>
                 <div class="feature-card" style="text-align:center; padding:15px;"><h2>A+</h2><p style="font-size:0.5rem; opacity:0.5;">UI/UX SCORE</p></div>
             </div>
         </section>
 
         <section id="pane-works" class="view-pane">
-            
             <div class="feature-card" style="border: 1px solid var(--webhub);">
-                <img src="Screenshot_2026-04-15-10-11-35-44.png" class="card-img">
-                <h4 style="color:var(--webhub)">WebHub Dashboard</h4>
+                <img src="Screenshot_2026-04-15-10-11-35-44.png" class="card-img" alt="WebHub Dashboard Interface">
+                <h3 style="color:var(--webhub)">WebHub Dashboard</h3>
                 <p style="font-size:0.75rem; opacity:0.6; margin-bottom:10px;">Centralized command center for digital asset management.</p>
                 <a href="https://web-hub-code.github.io/Web-hub/" target="_blank" class="btn-action">Launch Project</a>
             </div>
 
             <div class="feature-card" style="border-bottom: 4px solid #ffd700;">
-                <img src="Screenshot_2026-04-15-10-04-08-81.png" class="card-img">
-                <h4 style="color:#ffd700">MintCrestGold</h4>
+                <img src="Screenshot_2026-04-15-10-04-08-81.png" class="card-img" alt="MintCrestGold Investment App">
+                <h3 style="color:#ffd700">MintCrestGold</h3>
                 <p style="font-size:0.75rem; opacity:0.6; margin-bottom:10px;">Luxury investment and ROI tracking system.</p>
                 <a href="https://gtv140.github.io/investment/" target="_blank" class="btn-action" style="background:linear-gradient(45deg,#ffd700,#ffb300)">Access Vault</a>
             </div>
 
             <div class="feature-card" style="border-bottom: 4px solid var(--secondary);">
-                <img src="Screenshot_2026-04-15-09-59-25-00.png" class="card-img">
-                <h4 style="color:var(--secondary)">Live Connect Chat</h4>
+                <img src="Screenshot_2026-04-15-09-59-25-00.png" class="card-img" alt="Live Connect Chat Application">
+                <h3 style="color:var(--secondary)">Live Connect Chat</h3>
                 <p style="font-size:0.75rem; opacity:0.6; margin-bottom:10px;">Real-time business communication suite.</p>
                 <a href="https://gtv140.github.io/Live-chat/" target="_blank" class="btn-action">Join Network</a>
-            </div>
-
-            <div class="feature-card" style="border-bottom: 4px solid var(--accent);">
-                <img src="Screenshot_2026-04-15-10-01-13-43.png" class="card-img">
-                <h4 style="color:var(--accent)">Prime Academy</h4>
-                <p style="font-size:0.75rem; opacity:0.6; margin-bottom:10px;">Next-gen e-learning platform.</p>
-                <button class="btn-action" style="opacity:0.4; cursor:not-allowed;">Launching Soon</button>
             </div>
         </section>
 
         <section id="pane-contact" class="view-pane">
             <div class="feature-card">
-                <h3 style="margin-bottom:20px;">Corporate Channels</h3>
+                <h2 style="margin-bottom:20px; font-size: 1.5rem;">Corporate Channels</h2>
                 
                 <div class="contact-info">
                     <i class="fas fa-phone-alt"></i>
@@ -165,7 +165,7 @@
 
         <section id="pane-calculator" class="view-pane">
             <div class="feature-card">
-                <h3>Price Estimator</h3>
+                <h2 style="font-size: 1.5rem;">Price Estimator</h2>
                 <div style="background:rgba(0,242,254,0.05); border:1px dashed var(--primary); padding:25px; border-radius:20px; text-align:center; margin:20px 0;">
                     <p id="quote-display" style="font-size:2rem; font-weight:800; color:var(--primary);">$0.00</p>
                 </div>
@@ -179,10 +179,10 @@
     </div>
 
     <nav class="bottom-nav">
-        <div class="nav-icon active" onclick="navTo('home', this)"><i class="fas fa-university"></i></div>
-        <div class="nav-icon" onclick="navTo('works', this)"><i class="fas fa-briefcase"></i></div>
-        <div class="nav-icon" onclick="navTo('contact', this)"><i class="fas fa-address-book"></i></div>
-        <div class="nav-icon" onclick="navTo('calculator', this)"><i class="fas fa-calculator"></i></div>
+        <div class="nav-icon active" onclick="navTo('home', this)" title="Agency Home"><i class="fas fa-university"></i></div>
+        <div class="nav-icon" onclick="navTo('works', this)" title="Portfolio"><i class="fas fa-briefcase"></i></div>
+        <div class="nav-icon" onclick="navTo('contact', this)" title="Contact"><i class="fas fa-address-book"></i></div>
+        <div class="nav-icon" onclick="navTo('calculator', this)" title="Calculator"><i class="fas fa-calculator"></i></div>
     </nav>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -190,11 +190,19 @@
         AOS.init({ duration: 800, once: true });
         
         function navTo(paneId, btn) {
+            // Switch panes
             document.querySelectorAll('.view-pane').forEach(p => p.classList.remove('active'));
             document.getElementById('pane-' + paneId).classList.add('active');
             
+            // Sync active state for both tab bar and bottom nav
             document.querySelectorAll('.tab-trigger, .nav-icon').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
+            
+            // Highlight the clicked element and its counterparts
+            if(btn.classList.contains('nav-icon')) {
+                btn.classList.add('active');
+            } else {
+                btn.classList.add('active');
+            }
             
             window.scrollTo(0,0);
             if(paneId === 'calculator') runCalculator();
@@ -206,7 +214,10 @@
             const interval = setInterval(() => {
                 price += 43;
                 document.getElementById('quote-display').innerText = '$' + price + '.00';
-                if(price >= target) clearInterval(interval);
+                if(price >= target) {
+                    document.getElementById('quote-display').innerText = '$' + target + '.00';
+                    clearInterval(interval);
+                }
             }, 30);
         }
     </script>
